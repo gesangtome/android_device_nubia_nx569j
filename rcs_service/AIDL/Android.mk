@@ -19,7 +19,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := rcs_service_aidl
-
+LOCAL_ADDITIONAL_DEPENDENCIES := rcs_service_aidl.xml
 include $(BUILD_JAVA_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -43,7 +43,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := rcs_service_aidl_static
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
-
 
 #MAKE_XML
 include $(CLEAR_VARS)
