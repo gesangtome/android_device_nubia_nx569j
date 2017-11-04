@@ -38,3 +38,4 @@ allow untrusted_app battery_service:service_manager { find };
 allow untrusted_app atfwd:dir { getattr search };
 allow untrusted_app self:udp_socket { ioctl };
 allow untrusted_app debugfs:file { read };
+allow untrusted_app nubia_fingerprints_service:service_manager { find };
