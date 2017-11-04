@@ -34,3 +34,4 @@ allow untrusted_app rfs_system_file:dir { getattr };
 allow untrusted_app themeservice_app_data_file:dir { write };
 allow untrusted_app storage_stub_file:dir { getattr };
 allow untrusted_app anr_data_file:dir { read };
+allow untrusted_app battery_service:service_manager { find };
