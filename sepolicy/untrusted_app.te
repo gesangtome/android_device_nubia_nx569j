@@ -27,7 +27,7 @@
 
 allow untrusted_app init:dir { search };
 allow untrusted_app kernel:dir { getattr search };
-allow untrusted_app kernel:file { read };
+allow untrusted_app kernel:file { open read };
 allow untrusted_app device:dir { read };
 allow untrusted_app persist_file:dir { search };
 allow untrusted_app rfs_system_file:dir { getattr };
