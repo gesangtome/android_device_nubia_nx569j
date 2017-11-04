@@ -26,10 +26,11 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow untrusted_app init:dir { search };
-allow untrusted_app kernel:dir { search };
+allow untrusted_app kernel:dir { getattr search };
+allow untrusted_app kernel:file { read };
 allow untrusted_app device:dir { read };
 allow untrusted_app persist_file:dir { search };
 allow untrusted_app rfs_system_file:dir { getattr };
 allow untrusted_app themeservice_app_data_file:dir { write };
 allow untrusted_app storage_stub_file:dir { getattr };
-
+allow untrusted_app anr_data_file:dir { read };
