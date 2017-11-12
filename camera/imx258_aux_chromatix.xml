@@ -1,0 +1,259 @@
+<!--
+  Copyright (c) 2016 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+-->
+
+<!--
+CommonChromatixInfo:
+	CommonChromatixInfo is the information about chromatix needed for
+		various use cases.
+	Ex:- Preview, Snapshot, ZSL, HFR, HDR, Video, Liveshot for ISP, CPP,
+		3A and SW PostProc.
+	Entries in this node are common for all sensor modes.
+
+ResolutionChromatixInfo:
+	ResolutionChromatixInfo is the information about chromatix needed for
+		various use cases.
+	Ex:- Preview, Snapshot, ZSL, HFR, HDR, Video, Liveshot for ISP, CPP,
+		3A and SW PostProc.
+	Entries in this node are specific to sensor resolution.
+
+ChromatixName:
+	Contains the list of chromatix names for all modules.
+	special_mode_mask:
+		It is the bit mask for special modes, which is used for
+			chromatix selection.
+		Special modes can be any mode that needs a special chromatix.
+		Ex:- scene mode, DZOOM mode, OIS capture mode, flash mode
+		This is applicable for CommonChromatixInfo and
+			ResolutionChromatixInfo.
+		special_mode_mask="0" means none of the special modes are
+			selected.
+	sensor_resolution_index:
+		It is the sensor resolution index for which chromatix libraries
+			will be choosen.
+		It is applicable only in ResolutionChromatixInfo.
+
+ISPCommon :
+	Common tuning library name for ISP
+ISPPreview :
+	Preview tuning library name for ISP
+ISPSnapshot :
+	Snapshot tuning library name for ISP
+CPPCommon :
+	Common tuning library name for CPP
+CPPPreview :
+	Preview tuning library name for CPP
+CPPSnapshot :
+	Snapshot tuning library name for CPP
+CPPLiveshot :
+	Liveshot tuning library name for CPP
+PostProc :
+	Tuning library name for postproc module
+A3Preview :
+	Preview tuning library for 3A
+A3Video :
+	Video tuning library for 3A
+
+Order of Resolution Pick:
+	Assume the current sensor mode is "r" and special mode mask is "s".
+	Chromatix for a module and type is choosen in this order till we find a
+		valid chroamtix file name or else NULL is returned.
+	1) From ResolutionChromatixInfo node for which sensor_resolution_index
+		is "r" and special_mode_mask is "s".
+	2) From CommonChromatixInfo node for which special_mode_mask is "s".
+	3) From ResolutionChromatixInfo node for which sensor_resolution_index
+		is "r" and special_mode_mask is "0".
+	4) From CommonChromatixInfo node for which special_mode_mask is "0".
+	5) NULL is returned if we dont find in any of the above cases.
+
+special_mode_mask values:
+	SENSOR_SPECIAL_MODE_NONE = 0,
+	SENSOR_SPECIAL_MODE_FLASH = 1,
+	SENSOR_SPECIAL_MODE_ZOOM_UPSCALE = 2,
+	SENSOR_SPECIAL_MODE_ZOOM_DOWNSCALE = 4,
+	SENSOR_SPECIAL_MODE_OIS_CAPTURE = 8,
+-->
+
+<ChromatixConfigurationRoot>
+  <CommonChromatixInfo>
+    <ChromatixName>
+      <ISPCommon>imx258_aux_common</ISPCommon>
+      <PostProc>imx258_aux_postproc</PostProc>
+      <CPPPreview>imx258_aux_cpp_preview</CPPPreview>
+      <CPPSnapshot>imx258_aux_cpp_snapshot</CPPSnapshot>
+      <CPPLiveshot>imx258_aux_cpp_liveshot</CPPLiveshot>
+    </ChromatixName>
+  </CommonChromatixInfo>
+  <ResolutionChromatixInfo>
+    <ChromatixName sensor_resolution_index="0">
+      <ISPPreview>imx258_aux_isp_snapshot</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_default_video</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_zsl_preview</A3Preview>
+      <A3Video>imx258_aux_a3_zsl_video</A3Video>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+      <CPPMicrospur>imx258_aux_cpp_microspur</CPPMicrospur>
+      <A3FusionPreview>imx258_aux_bu64297_a3_fusion_mode_preview</A3FusionPreview>
+      <ISPFusionCommon>imx258_aux_bu64297_fusion_mode_common</ISPFusionCommon>
+      <ISPFusionSnapshot>imx258_aux_bu64297_isp_snapshot_fusion_mode</ISPFusionSnapshot>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="1">
+      <ISPPreview>imx258_aux_isp_hfr_60</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_hfr_60</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_hfr_60</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_hfr_60</CPPVideo>
+      <A3Preview>imx258_aux_a3_hfr_60</A3Preview>
+      <A3Video>imx258_aux_a3_hfr_60</A3Video>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="2">
+      <ISPPreview>imx258_aux_isp_preview</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_preview</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_default_video</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_default_preview</A3Preview>
+      <A3Video>imx258_aux_a3_default_video</A3Video>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="3">
+      <ISPPreview>imx258_aux_isp_snapshot_depth</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_depth</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_default_video</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_depth_preview</A3Preview>
+      <A3Video>imx258_aux_a3_default_video</A3Video>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="4">
+      <ISPPreview>imx258_aux_isp_video_4k</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_video_4k</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_video_4k</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_4k_video</A3Preview>
+      <A3Video>imx258_aux_a3_4k_video</A3Video>
+      <ISPCameraApp>imx258_aux_isp_panorama</ISPCameraApp>
+      <CPPCameraApp>imx258_aux_cpp_panorama</CPPCameraApp>
+      <A3CameraApp>imx258_aux_a3_panorama</A3CameraApp>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="5">
+      <ISPPreview>imx258_aux_isp_hfr_120</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_hfr_120</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_hfr_120</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_hfr_120</CPPVideo>
+      <A3Preview>imx258_aux_a3_hfr_120</A3Preview>
+      <A3Video>imx258_aux_a3_hfr_120</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="6">
+      <ISPPreview>imx258_aux_isp_snapshot_lightdraw</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_lightdraw</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_lightdraw</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_snapshot_lightdraw</CPPVideo>
+      <A3Preview>imx258_aux_a3_zsl_preview_lightdraw</A3Preview>
+      <A3Video>imx258_aux_a3_zsl_preview_lightdraw</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="7">
+      <ISPPreview>imx258_aux_isp_snapshot_electfno</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_electfno</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_electfno</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_snapshot_electfno</CPPVideo>
+      <A3Preview>imx258_aux_a3_zsl_preview_electfno</A3Preview>
+      <A3Video>imx258_aux_a3_zsl_preview_electfno</A3Video>
+      <A3CameraApp>imx258_aux_a3_electfno_hand</A3CameraApp>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="8">
+      <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="9">
+      <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="10">
+       <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="11">
+       <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="12">
+       <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+	<ChromatixName sensor_resolution_index="13">
+      <ISPPreview>imx258_aux_isp_snapshot_slowshutter</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_slowshutter</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_snapshot_slowshutter</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_slowshutter</A3Preview>
+      <A3Video>imx258_aux_a3_slowshutter</A3Video>
+    </ChromatixName>
+    <ChromatixName sensor_resolution_index="14">
+      <ISPPreview>imx258_aux_isp_preview</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_preview</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_default_video</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_default_preview</A3Preview>
+      <A3Video>imx258_aux_a3_default_video</A3Video>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+    </ChromatixName>    
+    <ChromatixName sensor_resolution_index="15">
+      <ISPCommon>imx258_aux_common_depth_20fps</ISPCommon>
+      <ISPPreview>imx258_aux_isp_snapshot_depth_20fps</ISPPreview>
+      <ISPSnapshot>imx258_aux_isp_snapshot_depth_20fps</ISPSnapshot>
+      <ISPVideo>imx258_aux_isp_default_video</ISPVideo>
+      <CPPVideo>imx258_aux_cpp_video</CPPVideo>
+      <A3Preview>imx258_aux_a3_depth_preview_20fps</A3Preview>
+      <A3Video>imx258_aux_a3_default_video</A3Video>
+      <A3ISO128Preview>imx258_aux_a3_iso128_preview</A3ISO128Preview>
+      <CPPISO128Preview>imx258_aux_cpp_iso128_preview</CPPISO128Preview>
+      <CPPISO128Snapshot>imx258_aux_cpp_iso128_snapshot</CPPISO128Snapshot>
+      <ISPISO128Common>imx258_aux_common_iso128</ISPISO128Common>
+      <ISPISO128Snapshot>imx258_aux_isp_iso128</ISPISO128Snapshot>
+    </ChromatixName>
+  </ResolutionChromatixInfo>
+</ChromatixConfigurationRoot>
+
