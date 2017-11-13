@@ -91,9 +91,6 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
-# Browser
-ENABLE_SWE_ENGINE := true
-
 # Cpuset
 ENABLE_CPUSETS := true
 
@@ -123,7 +120,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
-  #ifneq ($(TARGET_BUILD_VARIANT),eng)
   ifeq ($(TARGET_BUILD_VARIANT),user)
       WITH_DEXPREOPT := true
   endif
@@ -137,7 +133,7 @@ TARGET_USES_OVERLAY := true
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
-BOARD_EGL_CFG := $(DEVICE_PATH)/Display/egl.cfg
+BOARD_EGL_CFG := $(DEVICE_PATH)/display/egl.cfg
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -192,11 +188,12 @@ TARGET_POWERHAL_VARIANT := qcom
 PROTOBUF_SUPPORTED := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/SYSTEM/system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
+TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 
@@ -217,7 +214,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/RECOVERY/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
@@ -241,7 +238,6 @@ TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Wifi
-TARGET_USES_QCOM_WCNSS_QMI := true
 BOARD_HAS_QCOM_WLAN         := true
 BOARD_HAS_QCOM_WLAN_SDK     := true
 BOARD_WLAN_DEVICE           := qcwcn
