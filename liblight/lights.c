@@ -32,8 +32,6 @@
 
 #include <hardware/lights.h>
 
-#define LOG_TAG "lightHAL"
-
 /******************************************************************************/
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
@@ -62,7 +60,7 @@ static struct light_state_t g_battery;
 #define L_ATTENTION     0x08
 #define L_NONE          0xFF //255
 
-char const*const LCD_FILE
+const char *const LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
 
 char const *const LED_MODE
@@ -90,13 +88,14 @@ int is_charging = 0;
  * device methods
  */
 
-static void init_globals(void)
+void init_globals(void)
 {
     // init the mutex
     pthread_mutex_init(&g_lock, NULL);
 }
 
-static int write_int(char const* path, int value)
+static int
+write_int(char const* path, int value)
 {
     int fd;
     static int already_warned = 0;
@@ -117,7 +116,8 @@ static int write_int(char const* path, int value)
     }
 }
 
-static int write_str(char const* path, char* value)
+static int
+write_str(char const* path, char *value)
 {
     int fd;
     static int already_warned = 0;
@@ -138,7 +138,8 @@ static int write_str(char const* path, char* value)
     }
 }
 
-static int read_int(char const* path, int *value)
+static int
+read_int(char const* path, int *value)
 {
     int fd;
     static int already_warned = 0;
@@ -159,12 +160,14 @@ static int read_int(char const* path, int *value)
     }
 }
 
-static int is_lit(struct light_state_t const* state)
+static int
+is_lit(struct light_state_t const* state)
 {
     return state->color & 0x00ffffff;
 }
 
-static int rgb_to_brightness(const struct light_state_t *state)
+static int
+rgb_to_brightness(const struct light_state_t *state)
 {
     int color = state->color & 0x00ffffff;
     return ((77 * ((color >> 16) & 0xff))
@@ -172,7 +175,8 @@ static int rgb_to_brightness(const struct light_state_t *state)
             + (29 * (color & 0xff))) >> 8;
 }
 
-static int set_speaker_light_locked(int event,
+static int
+set_speaker_light_locked(int event,
         struct light_state_t const* state)
 {
     int onMS, offMS;
@@ -224,7 +228,8 @@ static int set_speaker_light_locked(int event,
     return 0;
 }
 
-static void handle_speaker_light_locked(struct light_device_t *dev)
+static void
+handle_speaker_light_locked(struct light_device_t *dev)
 {
     if (is_lit(&g_attention)) {
         set_speaker_light_locked(L_ATTENTION, &g_attention);
@@ -235,7 +240,8 @@ static void handle_speaker_light_locked(struct light_device_t *dev)
     }
 }
 
-static int set_light_backlight(struct light_device_t *dev,
+static int
+set_light_backlight(struct light_device_t *dev,
         const struct light_state_t *state)
 {
     int err = 0;
@@ -250,7 +256,8 @@ static int set_light_backlight(struct light_device_t *dev,
     return err;
 }
 
-static int set_light_buttons(struct light_device_t *dev,
+static int
+set_light_buttons(struct light_device_t *dev,
         const struct light_state_t *state)
 {
     int lcd_on, err = 0;
@@ -303,7 +310,8 @@ static int set_light_buttons(struct light_device_t *dev,
     return err;
 }
 
-static int set_light_attention(struct light_device_t *dev,
+static int
+set_light_attention(struct light_device_t *dev,
         const struct light_state_t *state)
 {
     pthread_mutex_lock(&g_lock);
@@ -318,7 +326,8 @@ static int set_light_attention(struct light_device_t *dev,
     return 0;
 }
 
-static int set_light_notifications(struct light_device_t *dev,
+static int
+set_light_notifications(struct light_device_t *dev,
         const struct light_state_t *state)
 {
     pthread_mutex_lock(&g_lock);
@@ -333,7 +342,8 @@ static int set_light_notifications(struct light_device_t *dev,
     return 0;
 }
 
-static int set_light_battery(struct light_device_t *dev,
+static int
+set_light_battery(struct light_device_t *dev,
         const struct light_state_t *state)
 {
     pthread_mutex_lock(&g_lock);
@@ -349,7 +359,8 @@ static int set_light_battery(struct light_device_t *dev,
 }
 
 /** Close the lights device */
-static int close_lights(struct light_device_t *dev)
+static int
+close_lights(struct light_device_t *dev)
 {
     if (dev) {
         free(dev);
@@ -415,6 +426,6 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
     .name = "Android Lights Module",
-    .author = "The LineageOS Project",
+    .author = "Android Open Source Project",
     .methods = &lights_module_methods,
 };
