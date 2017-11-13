@@ -289,7 +289,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc \
-    init.recovery.qcom.rc
+    init.recovery.qcom.rc \
+    init.ztemt.production.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.sh \
@@ -301,7 +302,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     qcrypto_module.ko \
-    qdrbg_module.ko
+    qdrbg_module.ko \
+    e2image_blocks \
+    filefrag_blocks \
+    mdtp_fota
 
 # RCS
 PRODUCT_PACKAGES += \
