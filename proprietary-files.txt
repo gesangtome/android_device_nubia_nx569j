@@ -227,7 +227,6 @@ etc/wfdconfigsink.xml
 -framework/embmslibrary.jar
 -framework/ifaa_fingerprint.jar
 -framework/imscmlibrary.jar
--framework/ims-common.jar
 -framework/org.simalliance.openmobileapi.jar
 -framework/qcmediaplayer.jar
 -framework/qcnvitems.jar
