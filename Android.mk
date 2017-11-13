@@ -285,7 +285,7 @@ $(shell mkdir -p $(TARGET_OUT)/vendor/lib64; \
         $(TARGET_OUT)/vendor/lib64/libEGL_adreno.so)
 
 # Create a link for the CAMERA(64-bit), which ends up as a writable
-$(shell mkdir -p $(TARGET_OUT)/priv-app; \
+$(shell mkdir -p $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64; \
         rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavcodec.so; \
         rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavfilter.so; \
         rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
