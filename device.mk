@@ -397,6 +397,8 @@ PRODUCT_BOOT_JARS += \
     com.qti.dpmframework \
     com.qti.location.sdk \
     dpmapi \
+    WfdCommon \
+    qcmediaplayer \
     ifaa_fingerprint \
     telephony-static-config
 
