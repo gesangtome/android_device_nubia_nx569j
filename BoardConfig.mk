@@ -205,6 +205,7 @@ TARGET_RIL_VARIANT := caf
 
 # Radio Update
 ADD_RADIO_FILES := true
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # add cpp and c code's falg, ril needs these flags
 BOARD_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DUSE_RIL_VERSION_11
