@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
 
 # Browser
 PRODUCT_PACKAGES += \
-    Gello
+    Browser
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 1920
@@ -195,11 +195,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/mediaprofiles/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
     $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_profiles_8956.xml:system/etc/media_profiles_8956.xml
+    $(LOCAL_PATH)/configs/mediaprofiles/media_profiles_8956.xml:system/etc/media_profiles_8956.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

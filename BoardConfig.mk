@@ -91,6 +91,9 @@ BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
+# Browser
+ENABLE_SWE_ENGINE = true
+
 # Cpuset
 ENABLE_CPUSETS := true
 
