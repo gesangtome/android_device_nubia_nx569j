@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 #
--priv-app/Camera/Camera.apk
+
 # ---------------------------------------------------------------------
 # Applications
 # ---------------------------------------------------------------------
@@ -31,6 +31,7 @@
 -priv-app/AMapNetworkLocation/AMapNetworkLocation.apk
 -priv-app/CNEService/CNEService.apk
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
+-priv-app/Gallery2/Gallery2.apk
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -priv-app/QtiTetherService/QtiTetherService.apk
 

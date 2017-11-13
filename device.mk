@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
     org.codeaurora.camera
 
 PRODUCT_PACKAGES += \
-    NubiaCamera
+    NubiaCamera \
+    Gallery2
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -397,6 +398,8 @@ PRODUCT_BOOT_JARS += \
     com.qti.dpmframework \
     com.qti.location.sdk \
     dpmapi \
+    WfdCommon \
+    qcmediaplayer \
     ifaa_fingerprint \
     telephony-static-config
 
