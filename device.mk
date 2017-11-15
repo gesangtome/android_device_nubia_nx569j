@@ -106,8 +106,7 @@ PRODUCT_PACKAGES += \
     org.codeaurora.camera
 
 PRODUCT_PACKAGES += \
-    NubiaCamera \
-    Gallery2
+    NubiaCamera
 
 # CNE
 PRODUCT_PACKAGES += \
@@ -356,6 +355,7 @@ PRODUCT_COPY_FILES += \
 
 # USB & OTG
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
     persist.sys.isUsbOtgEnabled=true
 
 # WCNSS
