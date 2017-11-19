@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type gx_fpd_service,          service_manager_type;
-type nubia_fingerprints_service,          service_manager_type;
-type regionalization_service,          service_manager_type;
-type fm_fingerprint_service,          service_manager_type;
+type gx_fpd_service,          app_api_service, system_server_service, service_manager_type;
+type nubia_fingerprints_service,          app_api_service, system_server_service, service_manager_type;
+type regionalization_service,          app_api_service, system_server_service, service_manager_type;
+type fm_fingerprint_service,          app_api_service, system_server_service, service_manager_type;
