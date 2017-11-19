@@ -8,5 +8,11 @@
    "remote": "suda"
    "repository": "gesangtome/android_kernel_nubia_z17mini"
    "target_path": "kernel/nubia/msm8952"
-}
+};
+{
+   "remote": "suda"
+   "revision": "cm-14.1"
+   "repository": "LineageOS/android_packages_resources_devicesettings"
+   "target_path": "packages/resources/devicesettings"
+};
 ]
