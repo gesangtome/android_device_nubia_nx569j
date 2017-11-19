@@ -205,6 +205,7 @@ TARGET_USES_NEW_ION_API :=true
 
 # Radio
 TARGET_RIL_VARIANT := caf
+BOARD_RIL_CLASS := ../../../$(DEVICE_PATH)/ril/
 
 # Radio Update
 ADD_RADIO_FILES := true
