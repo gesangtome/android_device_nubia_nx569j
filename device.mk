@@ -350,6 +350,9 @@ PRODUCT_PACKAGES += \
     librilutils \
     libril
 
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/cdmaconfig/cdma_call_conf.xml:system/etc/cdma_call_conf.xml
 
@@ -400,7 +403,8 @@ PRODUCT_BOOT_JARS += \
     WfdCommon \
     qcmediaplayer \
     ifaa_fingerprint \
-    telephony-static-config
+    telephony-static-config \
+    ims-ext-common
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
