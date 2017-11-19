@@ -247,7 +247,6 @@ etc/wfdconfigsink.xml
 lib/hw/camera.msm8952.so
 lib/hw/fingerprint.default.so
 lib/hw/gxfingerprint.default.so
-lib/hw/gps.default.so
 lib/hw/sensors.msm8952.so
 lib/libalColorMono.so
 lib/libalDU_Utility.so
@@ -337,7 +336,6 @@ lib/libtinyxml2.so
 # -----------------------------------------------------------------
 lib64/hw/fingerprint.default.so
 lib64/hw/gxfingerprint.default.so
-lib64/hw/gps.default.so
 lib64/hw/nfc_nci.bcm2079x.default.so
 lib64/hw/sensors.msm8952.so
 lib64/libAlgorithm.so
