@@ -75,10 +75,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skun_cajon.xml:system/etc/mixer_paths_qrd_skun_cajon.xml
 
-# Browser
-PRODUCT_PACKAGES += \
-    Browser
-
 # Brevent
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/Brevent:system/priv-app/Brevent/Brevent.apk
@@ -138,11 +134,6 @@ PRODUCT_PACKAGES += \
     memtrack.msm8952 \
     liboverlay
 
-# FMRadio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
-
 # Fingerprintd
 PRODUCT_PACKAGES += \
     fingerprintd
@@ -150,6 +141,13 @@ PRODUCT_PACKAGES += \
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# FMRadio
+PRODUCT_PACKAGES += \
+    FMRADIO
+
+PRODUCT_BOOT_JARS += \
+    qcom.fmradio
 
 # GPS
 PRODUCT_COPY_FILES += \

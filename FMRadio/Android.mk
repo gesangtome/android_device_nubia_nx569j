@@ -27,7 +27,14 @@ LOCAL_SRC_FILES +=  $(call all-java-files-under, src/com/caf/utils)
 endif
 LOCAL_PACKAGE_NAME := FMRADIO
 LOCAL_CERTIFICATE := platform
-LOCAL_JNI_SHARED_LIBRARIES := libqcomfm_jni
-LOCAL_JAVA_LIBRARIES := qcom.fmradio
+
+LOCAL_JNI_SHARED_LIBRARIES := \
+    libqcomfm_jni \
+    libfmjni
+
+LOCAL_JAVA_LIBRARIES := \
+    qcom.fmradio
 
 include $(BUILD_PACKAGE)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
