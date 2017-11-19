@@ -47,11 +47,11 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudioroute \
+    libbthost_if \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    libtinycompress \
     tinymix
 
 PRODUCT_COPY_FILES += \
@@ -112,13 +112,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NubiaCamera
 
+# ConfigPanel
+PRODUCT_PACKAGES += \
+    ConfigPanel
+
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
-# Device was launched with M
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
+# Doze mode
+PRODUCT_PACKAGES += \
+    NubiaDoze
 
 # DataServices
 PRODUCT_PACKAGES += \
@@ -143,6 +147,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd
 
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
@@ -151,6 +159,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf \
     $(LOCAL_PATH)/gps/lowi.conf:system/etc/lowi.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:system/etc/xtwifi.conf
+
+PRODUCT_PACKAGES += \
+    gps.msm8952
 
 PRODUCT_PACKAGES += \
     libcurl
@@ -191,6 +202,11 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8952
+
+# libshims
+PRODUCT_PACKAGES += \
+    libshim_camera \
+    libshims_ims
 
 # Media
 PRODUCT_COPY_FILES += \
