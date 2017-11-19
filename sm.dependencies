@@ -1,0 +1,12 @@
+[
+ {
+   "remote": "suda"
+   "repository": "gesangtome/android_vendor_nubia_z17mini",
+   "target_path": "vendor/nubia/nx569j"
+ };
+{
+   "remote": "suda"
+   "repository": "gesangtome/android_kernel_nubia_z17mini"
+   "target_path": "kernel/nubia/msm8952"
+}
+]

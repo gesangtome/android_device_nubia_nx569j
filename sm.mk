@@ -30,7 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/sm/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/nubia/nx569j/device.mk)
@@ -42,7 +42,7 @@ PRODUCT_RELEASE_NAME := nubia Z17mini
 BOARD_VENDOR := nubia
 PRODUCT_BRAND := nubia
 PRODUCT_DEVICE := nx569j
-PRODUCT_NAME := lineage_nx569j
+PRODUCT_NAME := sm_nx569j
 PRODUCT_MANUFACTURER := nubia
 PRODUCT_MODEL := nx569j
 TARGET_VENDOR := nubia
