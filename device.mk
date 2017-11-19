@@ -79,6 +79,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Browser
 
+# Brevent
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/Brevent:system/priv-app/Brevent/Brevent.apk
+
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
