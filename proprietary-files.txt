@@ -111,7 +111,8 @@ bin/xtwifi-inet-agent
 # -------------------------------------------------------
 # Configuration files
 # --------------------------------------------------------
-etc/aanc_tuning_mixer.txt
+
+# acdbdata
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 etc/acdbdata/MTP/MTP_General_cal.acdb
 etc/acdbdata/MTP/MTP_Global_cal.acdb
@@ -119,15 +120,25 @@ etc/acdbdata/MTP/MTP_Handset_cal.acdb
 etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 etc/acdbdata/MTP/MTP_Headset_cal.acdb
 etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+
+# cne
 etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
+
+# data
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
+
+# dpm
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
+
+# drc
 etc/drc/drc_cfg_5.1.txt
 etc/drc/drc_cfg_AZ.txt
+
+# firmware
 etc/firmware/a225p5_pm4.fw
 etc/firmware/a225_pfp.fw
 etc/firmware/a225_pm4.fw
@@ -173,16 +184,21 @@ etc/firmware/venus-v1.b03
 etc/firmware/venus-v1.b04
 etc/firmware/venus-v1.mbn
 etc/firmware/venus-v1.mdt
+
+# modem
 etc/modem_ota/CM/mcfg_sw.mbn
 etc/modem_ota/CT/mcfg_sw.mbn
 etc/modem_ota/CU/mcfg_sw.mbn
 etc/modem_ota/ROW/mcfg_sw.mbn
+
+# permissions
 etc/permissions/cneapiclient.xml
 etc/permissions/cn.nubia.fingerprintsupersnap.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 etc/permissions/com.qualcomm.location.vzw_library.xml
+etc/permissions/GBAHttpAuthentication.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/com.quicinc.cne.xml
 etc/permissions/ConnectivityExt.xml
@@ -196,24 +212,20 @@ etc/permissions/qti_permissions.xml
 etc/permissions/qti_telephony_common.xml
 etc/permissions/rcscommon.xml
 etc/permissions/telephonyservice.xml
+
+# SRS
 etc/srs/dts.lic
 etc/srs/srs_processing.cfg
+
+# surround_sound_3mic
 etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
+
+# Telephony
 etc/telephony/config.xml
-etc/aanc_tuning_mixer.txt
-etc/capability.xml
-etc/nfcee_access.xml
-etc/qca6234-service.sh
-etc/wfdconfig.xml
-etc/wfdconfig640_480.xml
-etc/wfdconfig800_480.xml
-etc/wfdconfig960_540.xml
-etc/wfdconfig1280_720.xml
-etc/wfdconfigsink.xml
 
 # ---------------------------------------------------
-# Java framework
+# frameworks
 # ---------------------------------------------------
 -framework/cneapiclient.jar
 -framework/com.qti.dpmframework.jar
@@ -241,6 +253,7 @@ etc/wfdconfigsink.xml
 -framework/telephony-static-config.jar
 -framework/tcmclient.jar
 -framework/WfdCommon.jar
+
 # -----------------------------------------------------------------
 # Shared library -- Aarch arm
 # -----------------------------------------------------------------
@@ -1567,6 +1580,7 @@ vendor/lib/libxt_native.so
 vendor/lib/libxtwifi_ulp_adaptor.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/sensors.ssc.so
+
 # other
 vendor/lib/libassetsverifier.so
 vendor/lib/libaudioparsers.so

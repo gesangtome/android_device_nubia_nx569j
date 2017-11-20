@@ -75,6 +75,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skun_cajon.xml:system/etc/mixer_paths_qrd_skun_cajon.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
+    $(LOCAL_PATH)/configs/capability.xml:system/etc/capability.xml \
+
 # Brevent
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/Brevent:system/priv-app/Brevent/Brevent.apk
@@ -230,6 +234,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/nfc/libnfc-brcm-20797b00.conf:system/etc/libnfc-brcm-20797b00.conf \
+    $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
 
 # OpenGL
 PRODUCT_PACKAGES += \
@@ -390,6 +399,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     wcnss_service
+
+# WFD
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wfd/wfdconfig.xml:system/etc/wfdconfig.xml \
+    $(LOCAL_PATH)/configs/wfd/wfdconfig640_480.xml:system/etc/wfdconfig640_480.xml \
+    $(LOCAL_PATH)/configs/wfd/wfdconfig800_480.xml:system/etc/wfdconfig800_480.xml \
+    $(LOCAL_PATH)/configs/wfd/wfdconfig960_540.xml:system/etc/wfdconfig960_540.xml \
+    $(LOCAL_PATH)/configs/wfd/wfdconfig1280_720.xml:system/etc/wfdconfig1280_720.xml \
+    $(LOCAL_PATH)/configs/wfd/wfdconfigsink.xml:system/etc/wfdconfigsink.xml
 
 # Wifi
 PRODUCT_PACKAGES += \
