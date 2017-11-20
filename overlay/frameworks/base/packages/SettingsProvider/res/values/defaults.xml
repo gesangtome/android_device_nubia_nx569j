@@ -28,6 +28,6 @@
     <fraction name="def_window_transition_scale">0%</fraction>
 
     <!-- Set the System overanimation to never -->
-    <bool name="def_install_non_market_apps">false</bool>
+    <bool name="def_install_non_market_apps">true</bool>
 
 </resources>
