@@ -30,4 +30,15 @@
     <!-- Set the System overanimation to never -->
     <bool name="def_install_non_market_apps">true</bool>
 
+   <!-- Default Input Method, its value is from inputmethod's package name and main class name
+        such as "com.android.inputmethod.pinyin/.PinyinIME"
+    -->
+    <string name="def_input_method" translatable="false">com.sohu.inputmethod.sogou/.SogouIME</string>
+
+    <!--
+        Default Enable InputMethods, its value is from inputmethod's package name and main class
+        name such as "com.android.inputmethod.pinyin/.PinyinIME" ;This is a string
+        containing the IDs of all enabled input methods, each ID separated by ':'.
+    -->
+    <string name="def_enable_input_methods" translatable="false">com.sohu.inputmethod.sogou/.SogouIME</string>
 </resources>
