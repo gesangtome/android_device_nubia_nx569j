@@ -148,10 +148,7 @@ PRODUCT_PACKAGES += \
 
 # FMRadio
 PRODUCT_PACKAGES += \
-    FMRADIO
-
-PRODUCT_BOOT_JARS += \
-    qcom.fmradio
+    NubiaFM
 
 # GPS
 PRODUCT_COPY_FILES += \
