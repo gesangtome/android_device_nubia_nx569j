@@ -316,7 +316,7 @@ lib/libhistutil.so
 lib/libIndependenceUtil.so
 lib/libLLVM.so
 lib/libloc_api_v02.so
-lib/libloc_core.so
+-lib/libloc_core.so
 lib/libloc_ds_api.so
 -lib/libloc_eng.so
 lib/libmmcamera_interface.so
@@ -403,7 +403,7 @@ lib64/libhistutil.so
 lib64/libIndependenceUtil.so
 lib64/libLLVM.so
 lib64/libloc_api_v02.so
-lib64/libloc_core.so
+-lib64/libloc_core.so
 lib64/libloc_ds_api.so
 -lib64/libloc_eng.so
 lib64/libmm-omxcore.so
