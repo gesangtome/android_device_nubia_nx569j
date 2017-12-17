@@ -45,7 +45,7 @@ import java.io.File;
 
 import com.cyanogenmod.settings.device.utils.Constants;
 
-import org.mokee.internal.util.FileUtils;
+import org.cyanogenmod.internal.util.FileUtils;
 
 public class Startup extends BroadcastReceiver {
 
@@ -54,7 +54,7 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, final Intent intent) {
         final String action = intent.getAction();
-        if (mokee.content.Intent.ACTION_INITIALIZE_MK_HARDWARE.equals(action)) {
+        if (cyanogenmod.content.Intent.ACTION_INITIALIZE_CM_HARDWARE.equals(action)) {
             // Disable touchscreen gesture settings if needed
             if (!hasTouchscreenGestures()) {
                 disableComponent(context, TouchscreenGestureSettings.class.getName());
