@@ -203,9 +203,9 @@ PRODUCT_PACKAGES += \
     lights.msm8952
 
 # libshims
-PRODUCT_PACKAGES += \
-    libshim_camera \
-    libshims_ims
+#PRODUCT_PACKAGES += \
+#    libshim_camera \
+#    libshims_ims
 
 # Media
 PRODUCT_COPY_FILES += \
