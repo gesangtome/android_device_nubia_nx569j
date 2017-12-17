@@ -262,6 +262,20 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
+# Create a link for the media file, which ends up as a writable
+$(shell mkdir -p $(TARGET_OUT)/media/alarms; \
+	mkdir -p $(TARGET_OUT)/media/ringtones; \
+	ln -sf /system/media/alarms/Nubia_mile.ogg \
+		$(TARGET_OUT)/media/ringtones/Nubia_mile.ogg; \
+	ln -sf /system/media/alarms/Nubia_mile_piano.ogg \
+		$(TARGET_OUT)/media/ringtones/Nubia_mile_piano.ogg; \
+	ln -sf /system/media/alarms/Nubia_mile_string.ogg \
+		$(TARGET_OUT)/media/ringtones/Nubia_mile_string.ogg; \
+	ln -sf /system/media/alarms/Nubia_mile_zither.ogg \
+		$(TARGET_OUT)/media/ringtones/Nubia_mile_zither.ogg; \
+	ln -sf /system/media/alarms/Ramble_over_country.ogg \
+		$(TARGET_OUT)/media/ringtones/Ramble_over_country.ogg)
+
 # Create a link for the WCNSS config file, which ends up as a writable
 # version in /data/misc/wifi
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan/prima; \
@@ -298,6 +312,7 @@ $(shell mkdir -p $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64; \
         $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
         ln -sf /system/lib64/libavutil.so \
         $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavutil.so)
+
 include device/nubia/nx569j/tftp.mk
 
 endif
