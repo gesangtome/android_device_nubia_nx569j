@@ -5,39 +5,39 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-## Libs
-#LOCAL_SHARED_LIBRARIES := \
-#    libutils \
-#    libcutils \
-#    liblog
+# Libs
+LOCAL_SHARED_LIBRARIES := \
+    libutils \
+    libcutils \
+    liblog
 
-#LOCAL_SRC_FILES += \
-#    loc_log.cpp \
-#    loc_cfg.cpp \
-#    msg_q.c \
-#    linked_list.c \
-#    loc_target.cpp \
-#    platform_lib_abstractions/elapsed_millis_since_boot.cpp \
-#    LocHeap.cpp \
-#    LocTimer.cpp \
-#    LocThread.cpp \
-#    MsgTask.cpp \
-#    loc_misc_utils.cpp
+LOCAL_SRC_FILES += \
+    loc_log.cpp \
+    loc_cfg.cpp \
+    msg_q.c \
+    linked_list.c \
+    loc_target.cpp \
+    platform_lib_abstractions/elapsed_millis_since_boot.cpp \
+    LocHeap.cpp \
+    LocTimer.cpp \
+    LocThread.cpp \
+    MsgTask.cpp \
+    loc_misc_utils.cpp
 
 # Flag -std=c++11 is not accepted by compiler when LOCAL_CLANG is set to true
-#LOCAL_CFLAGS += \
-#     -fno-short-enums \
-#     -D_ANDROID_
+LOCAL_CFLAGS += \
+     -fno-short-enums \
+     -D_ANDROID_
 
-#ifeq ($(TARGET_BUILD_VARIANT),user)
-#   LOCAL_CFLAGS += -DTARGET_BUILD_VARIANT_USER
-#endif
+ifeq ($(TARGET_BUILD_VARIANT),user)
+   LOCAL_CFLAGS += -DTARGET_BUILD_VARIANT_USER
+endif
 
-#LOCAL_LDFLAGS += -Wl,--export-dynamic
+LOCAL_LDFLAGS += -Wl,--export-dynamic
 
-## Includes
-#LOCAL_C_INCLUDES:= \
-#    $(LOCAL_PATH)/platform_lib_abstractions
+# Includes
+LOCAL_C_INCLUDES:= \
+    $(LOCAL_PATH)/platform_lib_abstractions
 
 LOCAL_COPY_HEADERS_TO:= gps.utils/
 LOCAL_COPY_HEADERS:= \
@@ -58,11 +58,11 @@ LOCAL_COPY_HEADERS:= \
    platform_lib_abstractions/platform_lib_macros.h \
    loc_misc_utils.h
 
-#LOCAL_MODULE := libgps.utils
+LOCAL_MODULE := libgps.utils
 
-#LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_TAGS := optional
 
-#LOCAL_PRELINK_MODULE := false
+LOCAL_PRELINK_MODULE := false
 
-include $(BUILD_COPY_HEADERS)
+include $(BUILD_SHARED_LIBRARY)
 #endif # not BUILD_TINY_ANDROID
