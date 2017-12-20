@@ -29,6 +29,26 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# =================================================================================================
+# The default language option.
+# If you want to add more languages, please add to this and submit it to me using git pull request.
+# in which format is as follows:
+# 
+# TARGET_LOCALES + : $language_$area
+# =================================================================================================
+
+# Chinese - The People's Republic of China
+TARGET_LOCALES := zh_CN zh_HK zh_TW
+
+# English - The United States of America
+TARGET_LOCALES += en_US
+
+# Russia - The Russian federation
+TARGET_LOCALES += ru_RU
+
+# Spanish - The kingdom of Spain
+TARGET_LOCALES += es_ES
+
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/sm/config/common_full_phone.mk)
 
