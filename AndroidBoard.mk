@@ -28,6 +28,13 @@
 LOCAL_PATH := $(call my-dir)
 
 #----------------------------------------------------------------------
+# Compile Linux Kernel
+#----------------------------------------------------------------------
+KERNEL_DEFCONFIG := msm8952-perf_defconfig
+
+include kernel/AndroidKernel.mk
+
+#----------------------------------------------------------------------
 # Radio image
 #----------------------------------------------------------------------
 ifeq ($(ADD_RADIO_FILES), true)
@@ -52,3 +59,8 @@ $(call add-radio-file,images/sbl1.mbn)
 $(call add-radio-file,images/splash.img)
 $(call add-radio-file,images/tz.mbn)
 endif
+
+#----------------------------------------------------------------------
+# extra images
+#----------------------------------------------------------------------
+include device/qcom/common/generate_extra_images.mk
