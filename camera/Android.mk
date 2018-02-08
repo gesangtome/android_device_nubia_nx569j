@@ -1,4 +1,4 @@
-# Copyright (c) 2017, 格桑花給我的. All rights reserved.
+# Copyright (c) 2018, Flowertome. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -38,33 +38,33 @@ LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_ADDITIONAL_DEPENDENCIES := \
-    camera_config \
-    imx214_chromatix \
-    imx230_chromatix \
-    imx230_qc2002_chromatix \
-    imx230_qc2002_with_gyro_chromatix \
-    imx258_aux_chromatix \
-    imx258_bear_chromatix \
-    imx258_chromatix \
-    imx258_main_chromatix \
-    imx258_mono_bear_chromatix \
-    imx258_mono_chromatix \
-    imx362_chromatix_bear \
-    imx362_chromatix \
-    imx378_chromatix \
-    msm8976pro_camera_imx258dual_s5k3p3 \
-    ov13850_chromatix \
-    ov13850_q13v06k_chromatix \
-    ov4688_chromatix \
-    ov5670_chromatix \
-    ov8858_chromatix \
-    ov8865_chromatix \
-    s5k2l7_8976_chromatix \
-    s5k2l7_chromatix \
-    s5k3m2xm_chromatix \
-    s5k3m2xx_chromatix \
-    s5k3p3_chromatix \
-    s5k3p3sm_chromatix
+    camera_config.xml \
+    imx214_chromatix.xml \
+    imx230_chromatix.xml \
+    imx230_qc2002_chromatix.xml \
+    imx230_qc2002_with_gyro_chromatix.xml \
+    imx258_aux_chromatix.xml \
+    imx258_bear_chromatix.xml \
+    imx258_chromatix.xml \
+    imx258_main_chromatix.xml \
+    imx258_mono_bear_chromatix.xml \
+    imx258_mono_chromatix.xml \
+    imx362_chromatix_bear.xml \
+    imx362_chromatix.xml \
+    imx378_chromatix.xml \
+    msm8976pro_camera_imx258dual_s5k3p3.xml \
+    ov13850_chromatix.xml \
+    ov13850_q13v06k_chromatix.xml \
+    ov4688_chromatix.xml \
+    ov5670_chromatix.xml \
+    ov8858_chromatix.xml \
+    ov8865_chromatix.xml \
+    s5k2l7_8976_chromatix.xml \
+    s5k2l7_chromatix.xml \
+    s5k3m2xm_chromatix.xml \
+    s5k3m2xx_chromatix.xml \
+    s5k3p3_chromatix.xml \
+    s5k3p3sm_chromatix.xml
 
 include $(BUILD_PREBUILT)
 
