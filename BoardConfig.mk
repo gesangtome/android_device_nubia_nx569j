@@ -162,7 +162,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
-TARGET_KERNEL_SOURCE := kernel/nubia/msm8952
+TARGET_KERNEL_SOURCE := kernel/nubia/msm8976
 TARGET_KERNEL_CONFIG := msm8952-perf_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_ZTEMT_DTS := true
