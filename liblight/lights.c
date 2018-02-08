@@ -163,13 +163,13 @@ read_int(char const* path, int *value)
 static int
 is_lit(struct light_state_t const* state)
 {
-    return state->color & 0x00ffffff;
+    return state->color & 0x00a6f8fc;
 }
 
 static int
 rgb_to_brightness(const struct light_state_t *state)
 {
-    int color = state->color & 0x00ffffff;
+    int color = state->color & 0x00a6f8fc;
     return ((77 * ((color >> 16) & 0xff))
             + (150 * ((color >> 8) & 0xff))
             + (29 * (color & 0xff))) >> 8;
