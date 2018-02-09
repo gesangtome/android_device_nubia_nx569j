@@ -29,3 +29,5 @@ allow qti_init_shell {
     media_msm8956_version_prop
     ctl_energy_awareness_prop
 }:property_service set;
+
+allow qti_init_shell storage_file:dir { search };
