@@ -275,7 +275,6 @@ lib/libMcRegistry.so
 lib/libNubiaImageAlgorithmPhotoEditor.so
 lib/libpl_droidsonroids_gif.so
 lib/libpmfunc.so
-lib/libPowerStretch.so
 lib/libprivacy_filesvc_jni.so
 lib/libqcmediaplayer.so
 lib/libregionalization.so
@@ -321,7 +320,6 @@ lib/libnubia_effect.so
 lib/libNubiaImageAlgorithm.so
 lib/libnubiajpeg.so
 lib/libnubia_trajectory.so
-lib/libNubiaxmptoolkit.so
 lib/libOmxVpp.so
 lib/libpanoramahelper.so
 lib/libpowermanager.so
@@ -362,7 +360,6 @@ lib64/libMcClient.so
 lib64/libMcRegistry.so
 lib64/libpl_droidsonroids_gif.so
 lib64/libpmfunc.so
-lib64/libPowerStretch.so
 lib64/libprivacy_filesvc_jni.so
 lib64/libqcmediaplayer.so
 lib64/libregionalization.so
@@ -407,7 +404,6 @@ lib64/libnubia_gallery_player.so
 lib64/libNubiaImageAlgorithm.so
 lib64/libnubiajpeg.so
 lib64/libnubia_trajectory.so
-lib64/libNubiaxmptoolkit.so
 lib64/libOmxVpp.so
 lib64/libpanoramahelper.so
 lib64/libpowermanager.so
