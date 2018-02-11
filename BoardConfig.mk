@@ -30,5 +30,9 @@ TARGET_PREBUILT_KERNEL := device/nubia/nx569j/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# Radio Update
+ADD_RADIO_FILES := true
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
 # include the non-open-source counterpart to this file
 -include vendor/nubia/nx569j/AndroidBoardVendor.mk

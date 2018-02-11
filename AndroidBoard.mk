@@ -27,6 +27,28 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
+#----------------------------------------------------------------------
+# Radio image
+#----------------------------------------------------------------------
+ifeq ($(ADD_RADIO_FILES), true)
+radio_dir := $(LOCAL_PATH)/radio
+RADIO_FILES := $(shell cd $(radio_dir) ; ls)
+$(foreach f, $(RADIO_FILES), \
+    $(call add-radio-file,radio/$(f)))
 
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
+TARGET_BOOTLOADER_EMMC_INTERNAL := $(LOCAL_PATH)/firmwares/emmc_appsboot.mbn
+$(TARGET_BOOTLOADER_EMMC_INTERNAL): $(TARGET_BOOTLOADER)
+
+INSTALLED_RADIOIMAGE_TARGET += $(TARGET_BOOTLOADER_EMMC_INTERNAL)
+$(call add-radio-file,firmwares/emmc_appsboot.mbn)
+$(call add-radio-file,firmwares/adspso.bin)
+$(call add-radio-file,firmwares/cmnlib.mbn)
+$(call add-radio-file,firmwares/cmnlib64.mbn)
+$(call add-radio-file,firmwares/devcfg.mbn)
+$(call add-radio-file,firmwares/keymaster.mbn)
+$(call add-radio-file,firmwares/NON-HLOS.bin)
+$(call add-radio-file,firmwares/rpm.mbn)
+$(call add-radio-file,firmwares/sbl1.mbn)
+$(call add-radio-file,firmwares/splash.img)
+$(call add-radio-file,firmwares/tz.mbn)
+endif
