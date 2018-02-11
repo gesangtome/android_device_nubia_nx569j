@@ -25,10 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-USE_CAMERA_STUB := true
-
-# inherit from the proprietary version
--include vendor/nubia/nx569j/BoardConfigVendor.mk
+DEVICE_PATH := device/nubia/nx569j
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
