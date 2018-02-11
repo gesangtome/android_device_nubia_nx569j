@@ -39,3 +39,6 @@
 # SDCARD
 /dev/block/mmcblk1p1                         /sdcard      vfat    nosuid,nodev                        wait
 /devices/soc.0/7864900.sdhci/mmc_host*       /sdcard1     vfat    nosuid,nodev                        wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
+
+# OTG
+/dev/block/sda1                              /usba_sdcard fat     nosuid,nodev                        wait
