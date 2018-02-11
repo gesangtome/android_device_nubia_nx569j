@@ -103,6 +103,14 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 DEFAULT_PERIODIC_CHORES_INTERVAL_FAST ：= "40 * 10"
 
+# Dex pre-opt to speed up initial boot
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+      WITH_DEXPREOPT := true
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00380000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00480000
