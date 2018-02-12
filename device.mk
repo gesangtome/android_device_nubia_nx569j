@@ -31,6 +31,15 @@ $(call inherit-product-if-exists, vendor/nubia/nx569j/nx569j-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/nubia/nx569j/overlay
 
+# Screen density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Boot animation
+TARGET_BOOTANIMATION_HALF_RES := true
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
 # audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/vendor/audio_effects.conf:system/vendor/etc/audio_effects.conf \
