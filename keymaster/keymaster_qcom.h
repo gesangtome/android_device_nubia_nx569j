@@ -105,7 +105,7 @@ typedef struct keymaster_gen_keypair_cmd keymaster_gen_keypair_cmd_t;
 struct keymaster_gen_keypair_resp {
       keymaster_cmd_t     cmd_id;
       qcom_km_key_blob_t  key_blob;
-      size_t              key_blob_len;
+      uint32_t            key_blob_len;
       int32_t             status;
 };
 typedef struct keymaster_gen_keypair_resp keymaster_gen_keypair_resp_t;
@@ -124,7 +124,7 @@ typedef struct keymaster_gen_keypair_resp keymaster_gen_keypair_resp_t;
 struct keymaster_import_keypair_cmd {
       keymaster_cmd_t cmd_id;
       uint32_t        pkcs8_key;
-      size_t          pkcs8_key_len;
+      uint32_t        pkcs8_key_len;
 };
 typedef struct keymaster_import_keypair_cmd keymaster_import_keypair_cmd_t;
 
@@ -140,7 +140,7 @@ typedef struct keymaster_import_keypair_cmd keymaster_import_keypair_cmd_t;
 struct keymaster_import_keypair_resp {
       keymaster_cmd_t     cmd_id;
       qcom_km_key_blob_t  key_blob;
-      size_t              key_blob_len;
+      uint32_t            key_blob_len;
       int32_t             status;
 };
 typedef struct keymaster_import_keypair_resp keymaster_import_keypair_resp_t;
@@ -161,7 +161,7 @@ struct keymaster_sign_data_cmd {
       keymaster_rsa_sign_params_t   sign_param;
       qcom_km_key_blob_t            key_blob;
       uint32_t                      data;
-      size_t                        dlen;
+      uint32_t                      dlen;
 };
 typedef struct keymaster_sign_data_cmd keymaster_sign_data_cmd_t;
 
@@ -176,7 +176,7 @@ typedef struct keymaster_sign_data_cmd keymaster_sign_data_cmd_t;
 struct keymaster_sign_data_resp {
       keymaster_cmd_t     cmd_id;
       uint8_t             signed_data[KM_KEY_SIZE_MAX];
-      size_t              sig_len;
+      uint32_t            sig_len;
       int32_t             status;
 };
 
@@ -200,9 +200,9 @@ struct keymaster_verify_data_cmd {
       keymaster_rsa_sign_params_t   sign_param;
       qcom_km_key_blob_t            key_blob;
       uint32_t                      signed_data;
-      size_t                        signed_dlen;
+      uint32_t                      signed_dlen;
       uint32_t                      signature;
-      size_t                        slen;
+      uint32_t                      slen;
 };
 typedef struct keymaster_verify_data_cmd keymaster_verify_data_cmd_t;
 /**
