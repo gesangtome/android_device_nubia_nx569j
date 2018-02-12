@@ -22,3 +22,7 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_nx569j
 PRODUCT_DEVICE := nx569j
+
+# Dalvik / HWUI
+$(call inherit-product, device/nubia/nx569j/frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, device/nubia/nx569j/frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
