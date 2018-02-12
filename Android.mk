@@ -297,18 +297,18 @@ $(shell mkdir -p $(TARGET_OUT)/vendor/lib64; \
         $(TARGET_OUT)/vendor/lib64/libEGL_adreno.so)
 
 # Create a link for the CAMERA(64-bit), which ends up as a writable
-$(shell mkdir -p $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64; \
-        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavcodec.so; \
-        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavfilter.so; \
-        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
-        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavutil.so; \
-        ln -sf /system/lib64/libavcodec.so \
-        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavcodec.so; \
-        ln -sf /system/lib64/libavfilter.so \
-        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavfilter.so; \
-        ln -sf /system/lib64/libavformat.so \
-        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
-        ln -sf /system/lib64/libavutil.so \
-        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavutil.so)
+#$(shell mkdir -p $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64; \
+#        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavcodec.so; \
+#        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavfilter.so; \
+#        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
+#        rm $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavutil.so; \
+#        ln -sf /system/lib64/libavcodec.so \
+#        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavcodec.so; \
+#        ln -sf /system/lib64/libavfilter.so \
+#        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavfilter.so; \
+#        ln -sf /system/lib64/libavformat.so \
+#        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavformat.so; \
+#        ln -sf /system/lib64/libavutil.so \
+#        $(TARGET_OUT)/priv-app/NubiaCamera/lib/arm64/libavutil.so)
 
 include device/nubia/nx569j/tftp.mk
