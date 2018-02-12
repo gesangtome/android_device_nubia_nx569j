@@ -188,8 +188,6 @@ ADD_RADIO_FILES := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
 
