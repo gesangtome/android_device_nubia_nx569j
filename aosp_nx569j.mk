@@ -25,9 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Release name
-PRODUCT_RELEASE_NAME := nx569j
-
 # Inherit some common Tesla stuff.
 $(call inherit-product, vendor/tesla/config/common_full_phone.mk)
 
