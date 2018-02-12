@@ -43,6 +43,13 @@ on init
 
 # TP&LCD NODE
 on post-fs-data
+    rm /data/tp/ic_ver
+    rm /data/tp/reset
+    rm /data/tp/ic_detect
+    rm /data/tp/start_update
+    rm /data/tp/easy_wakeup_gesture
+    rm /data/tp/easy_sleep_palm
+
     mkdir /data/tp 0775 system system
     symlink /sys/class/input/input1/ic_ver /data/tp/ic_ver
     symlink /sys/class/input/input1/reset /data/tp/reset
