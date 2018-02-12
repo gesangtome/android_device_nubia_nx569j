@@ -29,7 +29,7 @@
 $(call inherit-product, device/nubia/nx569j/device.mk)
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, build/target/product/full.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx569j
