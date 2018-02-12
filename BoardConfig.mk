@@ -169,9 +169,49 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 
+# add cpp and c code's falg, ril needs these flags
+BOARD_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+BOARD_GLOBAL_CPPFLAGS += -DQCOM_HARDWARE
+
+# Recovery
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_LARGE_FILESYSTEM := true
+
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
+
 # Radio Update
 ADD_RADIO_FILES := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy
+
+# Wifi
+BOARD_HAS_QCOM_WLAN         := true
+BOARD_HAS_QCOM_WLAN_SDK     := true
+BOARD_WLAN_DEVICE           := qcwcn
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER        := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_FW_PATH_STA     := "sta"
+WIFI_DRIVER_FW_PATH_AP      := "ap"
+WIFI_DRIVER_MODULE_NAME     := "wlan"
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wlan.ko"
+
+# Tap2Wake
+TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
+
+# TimeService
+BOARD_USES_QC_TIME_SERVICES := true
 
 # include the non-open-source counterpart to this file
 -include vendor/nubia/nx569j/AndroidBoardVendor.mk
