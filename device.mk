@@ -31,6 +31,9 @@ $(call inherit-product-if-exists, vendor/nubia/nx569j/nx569j-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/nubia/nx569j/overlay
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.first_api_level=23
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
