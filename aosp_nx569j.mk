@@ -25,15 +25,15 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Inherit some common Tesla stuff.
-$(call inherit-product, vendor/tesla/config/common_full_phone.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/nubia/nx569j/device.mk)
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx569j
-PRODUCT_NAME := tesla_nx569j
+PRODUCT_NAME := aosp_nx569j
 PRODUCT_BRAND := nubia
-PRODUCT_MODEL := nx569j
+PRODUCT_MODEL := nubia Z17mini
 PRODUCT_MANUFACTURER := nubia
