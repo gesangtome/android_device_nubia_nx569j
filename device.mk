@@ -53,7 +53,22 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
-# audio
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8952 \
+    audio.r_submix.default \
+    audio.usb.default \
+    libaudio-resampler \
+    libaudioroute \
+    libbthost_if \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libvolumelistener \
+    tinymix
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/vendor/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/vendor/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
@@ -74,6 +89,53 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skun_cajon.xml:system/etc/mixer_paths_qrd_skun_cajon.xml
+
+# Connectivity Engine support (CNE)
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig
+
+# C2D
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert
+
+# Stagefright
+PRODUCT_PACKAGES += \
+    libstagefrighthw
+
+# OMX
+PRODUCT_PACKAGES += \
+    libOmxCore \
+    libmm-omxcore \
+    libOmxVidcCommon \
+    msm-vidc-test \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libOmxSwVencMpeg4 \
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8952 \
+    org.codeaurora.camera
+
+PRODUCT_PACKAGES += \
+    libqomx_core \
+    libmmcamera_interface \
+    mm-qcamera-app \
+    libmm-qcamera \
+    libmmjpeg_interface \
+    mm-jpeg-interface-test \
+    mm-jpegdec-interface-test
+
+# copybit
+PRODUCT_PACKAGES += \
+    copybit.msm8952
+
+# Gralloc
+PRODUCT_PACKAGES += \
+    gralloc.msm8952 \
+    libmemalloc
+
 
 # CNE
 PRODUCT_COPY_FILES += \
@@ -109,6 +171,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
+# HDMI
+PRODUCT_PACKAGES += \
+    hdmi_cec.msm8952 \
+    libhdmi
+
+# Hwcomposer
+PRODUCT_PACKAGES += \
+    hwcomposer.msm8952
+
 # Hostpad
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
@@ -123,6 +194,33 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/config/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/config/keylayout/input_proxy.idc:system/usr/idc/input_proxy.idc
+
+# liboverlay
+PRODUCT_PACKAGES += \
+    liboverlay
+
+# libqdutils
+PRODUCT_PACKAGES += \
+    libqdutils \
+    libqdMetaData \
+    libqservice
+
+# SMD
+PRODUCT_PACKAGES += \
+    libsdmcore \
+    libsdmutils
+
+# memtrack
+PRODUCT_PACKAGES += \
+    memtrack.msm8952
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8952 \
+    libloc_core \
+    libloc_eng \
+    libgps.utils
+
 
 # Media
 PRODUCT_COPY_FILES += \
