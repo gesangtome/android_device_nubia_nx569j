@@ -41,5 +41,7 @@ PRODUCT_MANUFACTURER := nubia
 
 PRODUCT_GMS_CLIENTID_BASE := android-nubia
 
+TARGET_VENDOR := nubia
+
 # Inherit some common AOSPA stuff.
 include vendor/pa/main.mk
