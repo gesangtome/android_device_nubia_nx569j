@@ -32,15 +32,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit device configuration
 $(call inherit-product, device/nubia/nx569j/device.mk)
 
-# Inherit from those products. Most specific first.
-
-
-# Inherit some common AOSPA stuff.
-$(call inherit-product, vendor/pa/main.mk)
-
-## Device identifier. This must come after all inclusions
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nx569j
 PRODUCT_NAME := aosp_nx569j
 PRODUCT_BRAND := nubia
 PRODUCT_MODEL := nubia Z17mini
 PRODUCT_MANUFACTURER := nubia
+
+# Inherit some common AOSPA stuff.
+$(call inherit-product, vendor/pa/main.mk)
