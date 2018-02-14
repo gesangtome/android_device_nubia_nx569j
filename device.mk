@@ -39,9 +39,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Dalvik/HWUI
 $(call inherit-product, device/nubia/nx569j/frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
