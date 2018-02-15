@@ -18,12 +18,15 @@ LOCAL_SRC_FILES := \
     src/com/suntek/mway/rcs/client/aidl/service/callback/IGroupChatCallback.aidl \
 
 LOCAL_MODULE_TAGS := optional
+
 LOCAL_MODULE := rcs_service_aidl
+
+LOCAL_ADDITIONAL_DEPENDENCIES := \
+    rcs_service_aidl.xml
 
 include $(BUILD_JAVA_LIBRARY)
 
 include $(CLEAR_VARS)
-
 LOCAL_AIDL_INCLUDES := $(LOCAL_PATH)/src
 
 # Important: Must not contain any aidl files for parcelables
@@ -44,8 +47,7 @@ LOCAL_MODULE := rcs_service_aidl_static
 
 include $(BUILD_STATIC_JAVA_LIBRARY)
 
-
-#MAKE_XML
+# MAKE_XML
 include $(CLEAR_VARS)
 LOCAL_MODULE := rcs_service_aidl.xml
 LOCAL_MODULE_CLASS := ETC
