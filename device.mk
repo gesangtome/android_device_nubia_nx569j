@@ -307,6 +307,7 @@ PRODUCT_PACKAGES += \
 
 # RCS
 PRODUCT_PACKAGES += \
+    rcscommon \
     rcs_service_aidl \
     rcs_service_api
 

@@ -194,7 +194,6 @@ etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/qti_permissions.xml
 etc/permissions/qti_telephony_common.xml
-etc/permissions/rcscommon.xml
 etc/permissions/telephonyservice.xml
 etc/srs/dts.lic
 etc/srs/srs_processing.cfg
@@ -235,7 +234,6 @@ etc/wfdconfigsink.xml
 -framework/QPerformance.jar
 -framework/qti-telephony-common.jar
 -framework/QtiTelephonyServicelibrary.jar
--framework/rcscommon.jar
 -framework/rcsimssettings.jar
 -framework/rcsservice.jar
 -framework/telephony-static-config.jar
