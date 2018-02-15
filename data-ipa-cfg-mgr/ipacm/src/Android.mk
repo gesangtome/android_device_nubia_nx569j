@@ -1,8 +1,6 @@
-BOARD_PLATFORM_LIST := msm8916
-BOARD_PLATFORM_LIST += msm8909
-ifneq ($(call is-board-platform-in-list,$(BOARD_PLATFORM_LIST)),true)
-ifneq (,$(filter $(QCOM_BOARD_PLATFORMS),$(TARGET_BOARD_PLATFORM)))
-ifneq (, $(filter aarch64 arm arm64, $(TARGET_ARCH)))
+#
+# data-ipa-cfg-mgr
+#
 
 LOCAL_PATH := $(call my-dir)
 
@@ -64,6 +62,9 @@ LOCAL_MODULE := ipacm
 LOCAL_CLANG := false
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_ADDITIONAL_DEPENDENCIES := \
+    IPACM_cfg.xml
+
 LOCAL_SHARED_LIBRARIES := libipanat
 LOCAL_SHARED_LIBRARIES += libxml2
 LOCAL_SHARED_LIBRARIES += libnfnetlink
@@ -94,7 +95,3 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 LOCAL_MODULE_OWNER := ipacm
 include $(BUILD_PREBUILT)
-
-endif # $(TARGET_ARCH)
-endif
-endif
