@@ -304,6 +304,7 @@ lib/libfp_client.so
 lib/libfpnav.so
 lib/libfpservice.so
 lib/libft2.so
+-lib/libfmjni.so
 lib/libhistutil.so
 lib/libIndependenceUtil.so
 lib/libLLVM.so
@@ -356,6 +357,7 @@ lib64/libdashplayer.so
 lib64/libdrminputstream.so
 lib64/libDualCamera_Calibration.so
 lib64/libextmedia_jni.so
+-lib64/libfmjni.so
 lib64/libImageProc.so
 lib64/libmarking_system_jni.so
 lib64/libMcClient.so
@@ -1839,4 +1841,3 @@ vendor/qcril.db
 
 #Driver
 driver.iso
-
