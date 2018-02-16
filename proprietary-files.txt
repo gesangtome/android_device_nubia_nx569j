@@ -296,7 +296,6 @@ lib/libfp_client.so
 lib/libfpnav.so
 lib/libfpservice.so
 lib/libft2.so
--lib/libgps.utils.so
 lib/libhistutil.so
 lib/libIndependenceUtil.so
 lib/libLLVM.so
@@ -383,7 +382,6 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 lib64/libft2.so
--lib64/libgps.utils.so
 lib64/libhistutil.so
 lib64/libIndependenceUtil.so
 lib64/libLLVM.so
