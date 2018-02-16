@@ -27,6 +27,7 @@
 -app/shutdownlistener/shutdownlistener.apk
 -app/StaProxyService/StaProxyService.apk
 -app/TimeService/TimeService.apk
+-app/ZSRSTruMedia/ZSRSTruMedia.apk
 
 -priv-app/AMapNetworkLocation/AMapNetworkLocation.apk
 -priv-app/CNEService/CNEService.apk
@@ -111,7 +112,7 @@ bin/xtwifi-inet-agent
 # -------------------------------------------------------
 # Configuration files
 # --------------------------------------------------------
-etc/aanc_tuning_mixer.txt
+
 etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 etc/acdbdata/MTP/MTP_General_cal.acdb
 etc/acdbdata/MTP/MTP_Global_cal.acdb
@@ -119,15 +120,35 @@ etc/acdbdata/MTP/MTP_Handset_cal.acdb
 etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 etc/acdbdata/MTP/MTP_Headset_cal.acdb
 etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-etc/cne/andsfCne.xml
-etc/cne/SwimConfig.xml
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
-etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/drc/drc_cfg_5.1.txt
-etc/drc/drc_cfg_AZ.txt
+
+etc/camera/camera_config.xml
+etc/camera/imx214_chromatix.xml
+etc/camera/imx230_chromatix.xml
+etc/camera/imx230_qc2002_chromatix.xml
+etc/camera/imx230_qc2002_with_gyro_chromatix.xml
+etc/camera/imx258_aux_chromatix.xml
+etc/camera/imx258_bear_chromatix.xml
+etc/camera/imx258_chromatix.xml
+etc/camera/imx258_main_chromatix.xml
+etc/camera/imx258_mono_bear_chromatix.xml
+etc/camera/imx258_mono_chromatix.xml
+etc/camera/imx362_chromatix.xml
+etc/camera/imx362_chromatix_bear.xml
+etc/camera/imx378_chromatix.xml
+etc/camera/msm8976pro_camera_imx258dual_s5k3p3.xml
+etc/camera/ov4688_chromatix.xml
+etc/camera/ov5670_chromatix.xml
+etc/camera/ov8858_chromatix.xml
+etc/camera/ov8865_chromatix.xml
+etc/camera/ov13850_chromatix.xml
+etc/camera/ov13850_q13v06k_chromatix.xml
+etc/camera/s5k2l7_8976_chromatix.xml
+etc/camera/s5k2l7_chromatix.xml
+etc/camera/s5k3m2xm_chromatix.xml
+etc/camera/s5k3m2xx_chromatix.xml
+etc/camera/s5k3p3_chromatix.xml
+etc/camera/s5k3p3sm_chromatix.xml
+
 etc/firmware/a225p5_pm4.fw
 etc/firmware/a225_pfp.fw
 etc/firmware/a225_pm4.fw
@@ -173,10 +194,13 @@ etc/firmware/venus-v1.b03
 etc/firmware/venus-v1.b04
 etc/firmware/venus-v1.mbn
 etc/firmware/venus-v1.mdt
+
+
 etc/modem_ota/CM/mcfg_sw.mbn
 etc/modem_ota/CT/mcfg_sw.mbn
 etc/modem_ota/CU/mcfg_sw.mbn
 etc/modem_ota/ROW/mcfg_sw.mbn
+
 etc/permissions/cneapiclient.xml
 etc/permissions/cn.nubia.fingerprintsupersnap.xml
 etc/permissions/com.qti.dpmframework.xml
@@ -195,21 +219,6 @@ etc/permissions/qcrilhook.xml
 etc/permissions/qti_permissions.xml
 etc/permissions/qti_telephony_common.xml
 etc/permissions/telephonyservice.xml
-etc/srs/dts.lic
-etc/srs/srs_processing.cfg
-etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
-etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
-etc/telephony/config.xml
-etc/aanc_tuning_mixer.txt
-etc/capability.xml
-etc/nfcee_access.xml
-etc/qca6234-service.sh
-etc/wfdconfig.xml
-etc/wfdconfig640_480.xml
-etc/wfdconfig800_480.xml
-etc/wfdconfig960_540.xml
-etc/wfdconfig1280_720.xml
-etc/wfdconfigsink.xml
 
 # ---------------------------------------------------
 # Java framework
@@ -239,13 +248,13 @@ etc/wfdconfigsink.xml
 -framework/telephony-static-config.jar
 -framework/tcmclient.jar
 -framework/WfdCommon.jar
+
 # -----------------------------------------------------------------
 # Shared library -- Aarch arm
 # -----------------------------------------------------------------
 lib/hw/camera.msm8952.so
 lib/hw/fingerprint.default.so
 lib/hw/gxfingerprint.default.so
-lib/hw/sensors.msm8952.so
 lib/libalColorMono.so
 lib/libalDU_Utility.so
 lib/libAlgorithm.so
@@ -271,7 +280,6 @@ lib/libMcRegistry.so
 lib/libNubiaImageAlgorithmPhotoEditor.so
 lib/libpl_droidsonroids_gif.so
 lib/libpmfunc.so
-lib/libPowerStretch.so
 lib/libprivacy_filesvc_jni.so
 lib/libqcmediaplayer.so
 lib/libregionalization.so
@@ -334,7 +342,6 @@ lib/libtinyxml2.so
 lib64/hw/fingerprint.default.so
 lib64/hw/gxfingerprint.default.so
 lib64/hw/nfc_nci.bcm2079x.default.so
-lib64/hw/sensors.msm8952.so
 lib64/libAlgorithm.so
 lib64/libalParseOTP.so
 lib64/libalRnB.so
@@ -356,7 +363,6 @@ lib64/libMcClient.so
 lib64/libMcRegistry.so
 lib64/libpl_droidsonroids_gif.so
 lib64/libpmfunc.so
-lib64/libPowerStretch.so
 lib64/libprivacy_filesvc_jni.so
 lib64/libqcmediaplayer.so
 lib64/libregionalization.so
@@ -509,6 +515,7 @@ vendor/lib/libc2d30_bltlib.so
 vendor/lib/libCB.so
 vendor/lib/libChamomilePA.so
 vendor/lib/libchromaflash.so
+
 vendor/lib/libchromatix_csidtg_common.so
 vendor/lib/libchromatix_csidtg_cpp_preview.so
 vendor/lib/libchromatix_csidtg_postproc.so
@@ -1257,6 +1264,7 @@ vendor/lib/libchromatix_s5k3p3sm_snapshot.so
 vendor/lib/libchromatix_s5k3p3_snapshot.so
 vendor/lib/libchromatix_s5k3p3_zsl_preview_dw9800.so
 vendor/lib/libchromatix_s5k3p3_zsl_video_dw9800.so
+
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so

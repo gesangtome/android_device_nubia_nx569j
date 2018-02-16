@@ -27,7 +27,8 @@
 
 $(call inherit-product-if-exists, vendor/nubia/nx569j/nx569j-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -47,11 +48,11 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libaudioroute \
+    libbthost_if \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    libtinycompress \
     tinymix
 
 PRODUCT_COPY_FILES += \
@@ -76,8 +77,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixerpaths/mixer_paths_qrd_skun_cajon.xml:system/etc/mixer_paths_qrd_skun_cajon.xml
 
 # Browser
-PRODUCT_PACKAGES += \
-    Browser
+#PRODUCT_PACKAGES += \
+#    Browser
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 1920
@@ -106,11 +107,26 @@ PRODUCT_PACKAGES += \
     org.codeaurora.camera
 
 PRODUCT_PACKAGES += \
-    NubiaCamera
+    libqservice \
+    libqdutils \
+    libqdMetaData
 
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cne/andsfCne.xml:system/etc/cne/andsfCne.xml \
+    $(LOCAL_PATH)/cne/SwimConfig.xml:system/etc/cne/SwimConfig.xml
+
+# ConfigPanel
+PRODUCT_PACKAGES += \
+    ConfigPanel
+
+# unknown
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/unknown/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
+    $(LOCAL_PATH)/unknown/capability.xml:system/etc/capability.xml \
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -126,6 +142,22 @@ PRODUCT_PACKAGES += \
     datatop \
     sockev
 
+# DSI
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dsi/dsi_config.xml:system/etc/data/dsi_config.xml \
+    $(LOCAL_PATH)/dsi/netmgr_config.xml:system/etc/data/netmgr_config.xml \
+    $(LOCAL_PATH)/dsi/qmi_config.xml:system/etc/data/qmi_config.xml
+
+# DRC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/drc/drc_cfg_5.1.txt:system/etc/drc/drc_cfg_5.1.txt \
+    $(LOCAL_PATH)/drc/drc_cfg_AZ.txt:system/etc/drc/drc_cfg_AZ.txt
+
+# DPM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dpm/dpm.conf:system/etc/dpm/dpm.conf \
+    $(LOCAL_PATH)/dpm/nsrm/NsrmConfiguration.xml:system/etc/dpm/nsrm/NsrmConfiguration.xml
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8952 \
@@ -133,6 +165,10 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8952 \
     memtrack.msm8952 \
     liboverlay
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
 
 # FMRadio
 PRODUCT_PACKAGES += \
@@ -168,7 +204,7 @@ PRODUCT_COPY_FILES += \
 
 # IRSC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/IPC/sec_config:system/etc/sec_config
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -182,6 +218,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/keylayout/input_proxy.idc:system/usr/idc/input_proxy.idc
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    keystore.msm8952
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -213,6 +253,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/nfc/libnfc-brcm-20797b00.conf:system/etc/libnfc-brcm-20797b00.conf \
+    $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
 
 # OpenGL
 PRODUCT_PACKAGES += \
@@ -274,11 +319,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
-PRODUCT_PACKAGES += \
-    libqservice \
-    libqdutils \
-    libqdMetaData
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -321,9 +361,22 @@ PRODUCT_PACKAGES += \
     libstlport
 
 # Sensors
+PRODUCT_PACKAGES += \
+    sensors.msm8952
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:system/etc/sensors/hals.conf \
     $(LOCAL_PATH)/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
+
+# SRS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/srs/dts.lic:system/etc/srs/dts.lic \
+    $(LOCAL_PATH)/srs/srs_processing.cfg:system/etc/srs/srs_processing.cfg
+
+# surround
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/surround/surround_sound_rec_5.1.cfg:system/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg \
+    $(LOCAL_PATH)/surround/surround_sound_rec_AZ.cfg:system/etc/surround_sound_3mic/surround_sound_rec_AZ.cfg
 
 # Signture
 PRODUCT_COPY_FILES += \
@@ -358,6 +411,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/cdma/cdma_call_conf.xml:system/etc/cdma_call_conf.xml
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/telephony/config.xml:system/etc/telephony/config.xml
+
 # USB & OTG
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
@@ -376,6 +432,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     wcnss_service
+
+# WDF
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wfd/wfdconfig.xml:system/etc/wfdconfig.xml \
+    $(LOCAL_PATH)/wfd/wfdconfig640_480.xml:system/etc/wfdconfig640_480.xml \
+    $(LOCAL_PATH)/wfd/wfdconfig800_480.xml:system/etc/wfdconfig800_480.xml \
+    $(LOCAL_PATH)/wfd/wfdconfig960_540.xml:system/etc/wfdconfig960_540.xml \
+    $(LOCAL_PATH)/wfd/wfdconfig1280_720.xml:system/etc/wfdconfig1280_720.xml \
+    $(LOCAL_PATH)/wfd/wfdconfigsink.xml:system/etc/wfdconfigsink.xml
 
 # Wifi
 PRODUCT_PACKAGES += \
