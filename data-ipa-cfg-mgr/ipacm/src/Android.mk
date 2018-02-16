@@ -69,7 +69,11 @@ LOCAL_SHARED_LIBRARIES := libipanat
 LOCAL_SHARED_LIBRARIES += libxml2
 LOCAL_SHARED_LIBRARIES += libnfnetlink
 LOCAL_SHARED_LIBRARIES += libnetfilter_conntrack
+
+ifeq ($(PLATFORM_VERSION),23)
 LOCAL_SHARED_LIBRARIES += libdhcpcd
+endif
+
 LOCAL_CLANG := true
 include $(BUILD_EXECUTABLE)
 
