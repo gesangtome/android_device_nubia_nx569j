@@ -324,7 +324,6 @@ lib/libnubia_effect.so
 lib/libNubiaImageAlgorithm.so
 lib/libnubiajpeg.so
 lib/libnubia_trajectory.so
-lib/libNubiaxmptoolkit.so
 lib/libOmxVpp.so
 lib/libpanoramahelper.so
 lib/libpowermanager.so
@@ -406,7 +405,6 @@ lib64/libnubia_gallery_player.so
 lib64/libNubiaImageAlgorithm.so
 lib64/libnubiajpeg.so
 lib64/libnubia_trajectory.so
-lib64/libNubiaxmptoolkit.so
 lib64/libOmxVpp.so
 lib64/libpanoramahelper.so
 lib64/libpowermanager.so
