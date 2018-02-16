@@ -84,22 +84,22 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/hcidump.sh:system/etc/hcidump.sh \
-    $(LOCAL_PATH)/etc/hsic.control.bt.sh:system/etc/hsic.control.bt.sh \
-    $(LOCAL_PATH)/etc/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
-    $(LOCAL_PATH)/etc/init.crda.sh:system/etc/init.crda.sh \
-    $(LOCAL_PATH)/etc/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
-    $(LOCAL_PATH)/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
-    $(LOCAL_PATH)/etc/init.qcom.debug.sh:system/etc/init.qcom.debug.sh \
-    $(LOCAL_PATH)/etc/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
-    $(LOCAL_PATH)/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
-    $(LOCAL_PATH)/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
-    $(LOCAL_PATH)/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
-    $(LOCAL_PATH)/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
-    $(LOCAL_PATH)/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
-    $(LOCAL_PATH)/etc/init.qcom.zram.sh:system/etc/init.qcom.zram.sh \
-    $(LOCAL_PATH)/etc/init.qti.ims.sh:system/etc/init.qti.ims.sh \
-    $(LOCAL_PATH)/etc/qca6234-service.sh:system/etc/qca6234-service.sh
+    $(LOCAL_PATH)/shell/hcidump.sh:system/etc/hcidump.sh \
+    $(LOCAL_PATH)/shell/hsic.control.bt.sh:system/etc/hsic.control.bt.sh \
+    $(LOCAL_PATH)/shell/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
+    $(LOCAL_PATH)/shell/init.crda.sh:system/etc/init.crda.sh \
+    $(LOCAL_PATH)/shell/init.qcom.audio.sh:system/etc/init.qcom.audio.sh \
+    $(LOCAL_PATH)/shell/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
+    $(LOCAL_PATH)/shell/init.qcom.debug.sh:system/etc/init.qcom.debug.sh \
+    $(LOCAL_PATH)/shell/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
+    $(LOCAL_PATH)/shell/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    $(LOCAL_PATH)/shell/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    $(LOCAL_PATH)/shell/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
+    $(LOCAL_PATH)/shell/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
+    $(LOCAL_PATH)/shell/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    $(LOCAL_PATH)/shell/init.qcom.zram.sh:system/etc/init.qcom.zram.sh \
+    $(LOCAL_PATH)/shell/init.qti.ims.sh:system/etc/init.qti.ims.sh \
+    $(LOCAL_PATH)/shell/qca6234-service.sh:system/etc/qca6234-service.sh
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -144,13 +144,8 @@ PRODUCT_PACKAGES += \
     fingerprintd
 
 # GPS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf \
-    $(LOCAL_PATH)/gps/lowi.conf:system/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/xtwifi.conf:system/etc/xtwifi.conf
+PRODUCT_PACKAGES += \
+    gps.msm8952
 
 PRODUCT_PACKAGES += \
     libcurl
@@ -168,8 +163,8 @@ PRODUCT_PACKAGES += \
 
 # IRQ
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermalengine/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf \
-    $(LOCAL_PATH)/configs/thermalengine/msm_irqbalance_little_big.conf:system/vendor/etc/msm_irqbalance_little_big.conf
+    $(LOCAL_PATH)/thermal-engine/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf \
+    $(LOCAL_PATH)/thermal-engine/msm_irqbalance_little_big.conf:system/vendor/etc/msm_irqbalance_little_big.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -194,14 +189,16 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
-    $(LOCAL_PATH)/configs/mediaprofiles/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
-    $(LOCAL_PATH)/configs/mediacodecs/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
-    $(LOCAL_PATH)/configs/mediaprofiles/media_profiles_8956.xml:system/etc/media_profiles_8956.xml
+    $(LOCAL_PATH)/mediacodecs/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/mediacodecs/media_codecs_8956_v1.xml:system/etc/media_codecs_8956_v1.xml \
+    $(LOCAL_PATH)/mediacodecs/media_codecs_8956.xml:system/etc/media_codecs_8956.xml \
+    $(LOCAL_PATH)/mediacodecs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/mediacodecs/media_codecs_performance_8956.xml:system/etc/media_codecs_performance_8956.xml \
+    $(LOCAL_PATH)/mediacodecs/media_codecs_performance_8956_v1.xml:system/etc/media_codecs_performance_8956_v1.xml \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/mediaprofiles/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/mediaprofiles/media_profiles_8956.xml:system/etc/media_profiles_8956.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -325,8 +322,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/sensors/hals.conf:system/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
 
 # Signture
 PRODUCT_COPY_FILES += \
@@ -343,10 +340,10 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal/thermal-mode-00-01.conf:system/etc/.tp/.thermal-mode-00-01.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-mode-00-02.conf:system/etc/.tp/.thermal-mode-00-02.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-mode-00-03.conf:system/etc/.tp/.thermal-mode-00-03.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-mode-00-04.conf:system/etc/.tp/.thermal-mode-00-04.conf
+    $(LOCAL_PATH)/thermal-engine/thermal-mode-00-01.conf:system/etc/.tp/.thermal-mode-00-01.conf \
+    $(LOCAL_PATH)/thermal-engine/thermal-mode-00-02.conf:system/etc/.tp/.thermal-mode-00-02.conf \
+    $(LOCAL_PATH)/thermal-engine/thermal-mode-00-03.conf:system/etc/.tp/.thermal-mode-00-03.conf \
+    $(LOCAL_PATH)/thermal-engine/thermal-mode-00-04.conf:system/etc/.tp/.thermal-mode-00-04.conf
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -359,7 +356,7 @@ PRODUCT_PACKAGES += \
     ims-ext-common
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/cdmaconfig/cdma_call_conf.xml:system/etc/cdma_call_conf.xml
+    $(LOCAL_PATH)/cdma/cdma_call_conf.xml:system/etc/cdma_call_conf.xml
 
 # USB & OTG
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -367,10 +364,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true
 
 # WCNSS
+PRODUCT_PACKAGES += \
+    WCNSS_qcom_cfg.ini \
+    WCNSS_cfg.dat
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(LOCAL_PATH)/wlan/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
     libwifi-hal-qcom
