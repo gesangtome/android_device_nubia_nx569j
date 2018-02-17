@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carrier_config_list>
+
         <!-- Flag indicating if the phone is a world phone -->
         <boolean name="world_phone_bool" value="true" />
-    <carrier_config>
 
         <!-- Show cdma auto network mode in (global) roaming -->
         <boolean name="show_cdma_choices_bool" value="true" />
-    <carrier_config>
+    </carrier_config>
+
 </carrier_config_list>
