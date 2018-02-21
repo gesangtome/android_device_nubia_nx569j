@@ -118,8 +118,8 @@ void set_model_name()
 
 void init_alarm_boot_properties()
 {
-            description = "NX569J-user 6.0.1 MMB29M eng.nubia.20170926.133510 release-keys";
-            fingerprint = "nubia/NX569J/NX569J:6.0.1/MMB29M/nubia09261336:user/release-keys";
+            description = "NX569J-user 6.0.1 MMB29M eng.nubia.20171227.001510 release-keys";
+            fingerprint = "nubia/NX569J/NX569J:6.0.1/MMB29M/eng.nubia.20170926.235033:user/release-keys";
 
             property_set("ro.build.description", description);
             property_set("ro.build.fingerprint", fingerprint);
