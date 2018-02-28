@@ -28,12 +28,13 @@
 import init.qcom.usb.rc
 
 # Import the Nubia extension USB configuration
+# gesangtome <gesangtome@189.cn> to add -->
 import init.nubia.usb.rc
-# gesangtome <gesangtome@189.cn> to add -->
 
-# Import the ztemt extension configuration
-import init.ztemt.production.rc
+# Import the nubia extension configuration
 # gesangtome <gesangtome@189.cn> to add -->
+# EvilGodEX <evilghostex@foxmail.com> to modified -->
+import init.nubia.extension.rc
 
 import init.target.rc
 
