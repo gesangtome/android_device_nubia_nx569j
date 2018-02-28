@@ -251,3 +251,9 @@
 
 # Add device block for FRP
 /dev/block/platform/soc.0/7824900.sdhci/by-name/config    0660   system     system
+
+# Extension ueventd service: NFC
+# Modified by EvilGodEX - 2018.02.28
+
+/dev/bcm2079x             0660   nfc        nfc
+
