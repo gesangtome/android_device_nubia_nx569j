@@ -104,7 +104,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Once camera module can run in the native mode of the system (either
 # 32-bit or 64-bit), the following line should be deleted
 BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_TS_MAKEUP := true
 
 # CMHW
@@ -173,6 +172,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/nubia/msm8976
 TARGET_KERNEL_CONFIG := msm8976-perf_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_ZTEMT_DTS := true
 
 TARGET_KERNEL_ARCH := arm64
@@ -238,9 +238,6 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
-
-# Signature
-PRODUCT_DEFAULT_DEV_CERTIFICATE := build/target/product/security/releasekey
 
 # Tap2Wake
 TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
