@@ -339,13 +339,6 @@ PRODUCT_PACKAGES += \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh
 
-PRODUCT_PACKAGES += \
-    qcrypto_module.ko \
-    qdrbg_module.ko \
-    e2image_blocks \
-    filefrag_blocks \
-    mdtp_fota
-
 # RCS
 PRODUCT_PACKAGES += \
     rcscommon \
