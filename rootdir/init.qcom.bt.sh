@@ -1,5 +1,6 @@
 #!/system/bin/sh
 # Copyright (c) 2009-2013, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, Flowertome. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -215,6 +216,9 @@ kill_hciattach ()
 logi "init.qcom.bt.sh config = $config"
 case "$config" in
     "onboot")
+    if [ ! -f "/presist/bluetooth/.bt_nv.bin"]; then
+       program_bdaddr
+    fi
         config_bt
         exit 0
         ;;
