@@ -49,50 +49,6 @@ start_sensors()
     fi
 }
 
-start_battery_monitor()
-{
-	if ls /sys/bus/spmi/devices/qpnp-bms-*/fcc_data ; then
-		chown -h root.system /sys/module/pm8921_bms/parameters/*
-		chown -h root.system /sys/module/qpnp_bms/parameters/*
-		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_data
-		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_temp
-		chown -h root.system /sys/bus/spmi/devices/qpnp-bms-*/fcc_chgcyl
-		chmod 0660 /sys/module/qpnp_bms/parameters/*
-		chmod 0660 /sys/module/pm8921_bms/parameters/*
-		mkdir -p /data/bms
-		chown -h root.system /data/bms
-		chmod 0770 /data/bms
-		start battery_monitor
-	fi
-}
-
-start_charger_monitor()
-{
-	if ls /sys/module/qpnp_charger/parameters/charger_monitor; then
-		chown -h root.system /sys/module/qpnp_charger/parameters/*
-		chown -h root.system /sys/class/power_supply/battery/input_current_max
-		chown -h root.system /sys/class/power_supply/battery/input_current_trim
-		chown -h root.system /sys/class/power_supply/battery/input_current_settled
-		chown -h root.system /sys/class/power_supply/battery/voltage_min
-		chmod 0664 /sys/class/power_supply/battery/input_current_max
-		chmod 0664 /sys/class/power_supply/battery/input_current_trim
-		chmod 0664 /sys/class/power_supply/battery/input_current_settled
-		chmod 0664 /sys/class/power_supply/battery/voltage_min
-		chmod 0664 /sys/module/qpnp_charger/parameters/charger_monitor
-		start charger_monitor
-	fi
-}
-
-start_msm_irqbalance_8939()
-{
-	if [ -f /system/bin/msm_irqbalance ]; then
-		case "$platformid" in
-		    "239" | "241" | "263" | "264" | "268" | "269" | "270" | "271")
-			start msm_irqbalance;;
-		esac
-	fi
-}
-
 start_msm_irqbalance_8952()
 {
 	if [ -f /system/bin/msm_irqbalance ]; then
@@ -114,7 +70,7 @@ start_msm_irqbalance()
 	fi
 }
 
-start_copying_prebuilt_qcril_db()
+start_copying_qcril_db()
 {
     if [ -f /system/vendor/qcril.db -a ! -f /data/misc/radio/qcril.db ]; then
         cp /system/vendor/qcril.db /data/misc/radio/qcril.db
@@ -125,13 +81,14 @@ start_copying_prebuilt_qcril_db()
 baseband=`getprop ro.baseband`
 echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
-case "$baseband" in
-        "svlte2a")
-        start bridgemgrd
-        ;;
-esac
-
 start_sensors
+	start_msm_irqbalance_8952
+    start_copying_qcril_db
+    start_msm_irqbalance
+
+if [ "`getprop ro.bootmode`" != "charger" ]; then
+    start rmt_storage
+fi
 
 if [ -f /sys/class/graphics/fb0/modes ]; then
 	panel_res=`cat /sys/class/graphics/fb0/modes`
@@ -142,176 +99,8 @@ if [ -f /sys/class/graphics/fb0/modes ]; then
 	fi
 fi
 
-case "$target" in
-    "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
-        if [ -f /sys/devices/soc0/hw_platform ]; then
-            value=`cat /sys/devices/soc0/hw_platform`
-        else
-            value=`cat /sys/devices/system/soc/soc0/hw_platform`
-        fi
-        case "$value" in
-            "Fluid")
-             start profiler_daemon;;
-        esac
-        ;;
-    "msm8660" )
-        if [ -f /sys/devices/soc0/hw_platform ]; then
-            platformvalue=`cat /sys/devices/soc0/hw_platform`
-        else
-            platformvalue=`cat /sys/devices/system/soc/soc0/hw_platform`
-        fi
-        case "$platformvalue" in
-            "Fluid")
-                start profiler_daemon;;
-        esac
-        ;;
-    "msm8960")
-        case "$baseband" in
-            "msm")
-                start_battery_monitor;;
-        esac
-
-        if [ -f /sys/devices/soc0/hw_platform ]; then
-            platformvalue=`cat /sys/devices/soc0/hw_platform`
-        else
-            platformvalue=`cat /sys/devices/system/soc/soc0/hw_platform`
-        fi
-        case "$platformvalue" in
-             "Fluid")
-                 start profiler_daemon;;
-             "Liquid")
-                 start profiler_daemon;;
-        esac
-        ;;
-    "msm8974")
-        platformvalue=`cat /sys/devices/soc0/hw_platform`
-        case "$platformvalue" in
-             "Fluid")
-                 start profiler_daemon;;
-             "Liquid")
-                 start profiler_daemon;;
-        esac
-        case "$baseband" in
-            "msm")
-                start_battery_monitor
-                ;;
-        esac
-        start_charger_monitor
-        ;;
-    "apq8084")
-        platformvalue=`cat /sys/devices/soc0/hw_platform`
-        case "$platformvalue" in
-             "Fluid")
-                 start profiler_daemon;;
-             "Liquid")
-                 start profiler_daemon;;
-        esac
-        ;;
-    "msm8226")
-        start_charger_monitor
-        ;;
-    "msm8610")
-        start_charger_monitor
-        ;;
-    "msm8916")
-        start_msm_irqbalance_8939
-        if [ -f /sys/devices/soc0/soc_id ]; then
-            soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-            soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
-
-        if [ -f /sys/devices/soc0/platform_subtype_id ]; then
-             platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
-        fi
-        if [ -f /sys/devices/soc0/hw_platform ]; then
-             hw_platform=`cat /sys/devices/soc0/hw_platform`
-        fi
-        case "$soc_id" in
-             "239")
-                  case "$hw_platform" in
-                       "Surf")
-                            case "$platform_subtype_id" in
-                                 "1" | "2")
-                                      setprop qemu.hw.mainkeys 0
-                                      ;;
-                            esac
-                            ;;
-                       "MTP")
-                            case "$platform_subtype_id" in
-                                 "3")
-                                      setprop qemu.hw.mainkeys 0
-                                      ;;
-                            esac
-                            ;;
-                  esac
-                  ;;
-        esac
-        ;;
-    "msm8952")
-	start_msm_irqbalance_8952
-        if [ -f /sys/devices/soc0/soc_id ]; then
-            soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-            soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
-
-        if [ -f /sys/devices/soc0/platform_subtype_id ]; then
-             platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
-        fi
-        if [ -f /sys/devices/soc0/hw_platform ]; then
-             hw_platform=`cat /sys/devices/soc0/hw_platform`
-        fi
-        case "$soc_id" in
-             "264")
-                  case "$hw_platform" in
-                       "Surf")
-                            case "$platform_subtype_id" in
-                                 "1" | "2")
-                                      setprop qemu.hw.mainkeys 0
-                                      ;;
-                            esac
-                            ;;
-                       "MTP")
-                            case "$platform_subtype_id" in
-                                 "3")
-                                      setprop qemu.hw.mainkeys 0
-                                      ;;
-                            esac
-                            ;;
-                       "QRD")
-                            case "$platform_subtype_id" in
-                                 "0")
-                                      setprop qemu.hw.mainkeys 0
-                                      ;;
-                            esac
-                            ;;
-                  esac
-                  ;;
-             "266" | "274" | "277" | "278")
-                  case "$hw_platform" in
-                       "Surf" | "RCM")
-                           if [ $panel_xres -eq 1440 ]; then
-                               setprop qemu.hw.mainkeys 0
-                           fi
-                           ;;
-                       "MTP" | "QRD")
-                           setprop qemu.hw.mainkeys 0
-                           ;;
-                  esac
-                  ;;
-        esac
-        ;;
-    "msm8994")
-        start_msm_irqbalance
-        ;;
-    "msm8909")
-        ;;
 esac
 
-#NUBIA ADD
-setprop qemu.hw.mainkeys 1
-#NUBIA ADD END
 
 #
 # Copy qcril.db if needed for RIL
