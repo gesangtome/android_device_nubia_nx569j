@@ -45,8 +45,6 @@ import init.target.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
-    insmod /sbin/qcrypto_module.ko
-    insmod /sbin/qdrbg_module.ko
 
 on init
     # Set permissions for persist partition
