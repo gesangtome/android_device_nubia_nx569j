@@ -41,6 +41,7 @@ LOCAL_COPY_HEADERS:= \
     LocApiBase.h \
     LocAdapterBase.h \
     ContextBase.h \
+    fused_location_extended.h \
     LocDualContext.h \
     LBSProxyBase.h \
     UlpProxyBase.h \
