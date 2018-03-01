@@ -51,6 +51,7 @@ bin/adsprpcd
 bin/ATFWD-daemon
 bin/btCommand
 bin/btnvtool
+bin/btconfsrvc
 bin/cnd
 bin/cnss_diag
 bin/cnss-daemon
