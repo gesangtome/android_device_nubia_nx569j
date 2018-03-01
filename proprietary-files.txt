@@ -89,7 +89,6 @@ bin/pm-proxy
 bin/pm-service
 bin/port-bridge
 bin/ptt_socket_app
-bin/qcom-system-daemon
 bin/qmuxd
 bin/qseecomd
 bin/radish
