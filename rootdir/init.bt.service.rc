@@ -1,0 +1,13 @@
+# bt config service
+service btconfsrvc /system/bin/btconfsrvc
+    class late_start
+    user root
+    group bluetooth qcom_diag
+    disabled
+    oneshot
+    
+on property:sys.bt.conf.srvc.enable=1
+    start btconfsrvc
+    
+on property:sys.bt.conf.srvc.enable=0
+    stop btconfsrvc

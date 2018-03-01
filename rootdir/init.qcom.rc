@@ -37,6 +37,10 @@ import init.nubia.extend.usb.rc
 # EvilGodEX <evilghostex@foxmail.com> to modified -->
 import init.nubia.extension.rc
 
+# Import the bluetooth service
+# Flowertome <gesangtome@foxmail.com> to add -->
+import init.bt.service.rc
+
 import init.target.rc
 
 on early-init
