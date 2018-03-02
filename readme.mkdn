@@ -1,9 +1,12 @@
-Copyright (c) 2017 - 格桑花给我的 < gesangtome@189.cn >
+## `Device Tree for nubia Z17mini (NX569J/NX569H)`
 
-Device Tree for nubia Z17mini (NX569J/NX569H)
-===========================================
+#### Copyright© 2018 Flowertome [gesangtome@foxmail.com]
 
-Basic   | Spec Sheet
+[![License](https://img.shields.io/badge/License-Apache%20V2.0-blue.svg)](LICENSE)
+
+![image](nubia.png)
+
+`Basic   | Spec Sheet`
 -------:|:-------------------------
 CPU     | Quad-core 1.4 GHz Cortex-A53 & Quad-core 1.8 GHz Cortex-A72
 Chipset | Qualcomm MSM8976 Snapdragon 652
@@ -16,8 +19,8 @@ Display | 1920x1080 pixels, 5.2 inches (~424 ppi pixel density)
 Camera  | Primary: Dual cameras, Lord: 13 million pixels, Vice: 13 million pixels, f/2.2, single-LED flash
 Camera	| Secondary: f/2.0, 16 million pixels
 
-Kernel source code for nubia Z17mini (NX569J/NX569H)
-===========================================
-http://git.oschina.net/gesangtome/android_kernel_nubia_msm8952 -[by gesangtome]
+## `Kernel source code for nubia Z17mini (NX569J/NX569H)`
 
-![nubia Z17mini (NX569J/NX569H)](https://raw.githubusercontent.com/gesangtome/nubia/master/1a1b8d8d4833f93aa3cf1f0384c03cac.jpg "nubia Z17mini")
+#### Copyright© 2018 Flowertome [gesangtome@foxmail.com]
+
+https://github.com/Flowertome/android_kernel_nubia_msm8976
