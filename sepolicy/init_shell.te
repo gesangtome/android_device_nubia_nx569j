@@ -26,6 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow qti_init_shell {
-    media_msm8956_version_prop
-    ctl_energy_awareness_prop
+    ctl_default_prop
 }:property_service set;
+
+allow qti_init_shell storage_file:dir search;
+allow qti_init_shell storage_file:lnk_file read;
+allow qti_init_shell mnt_user_file:dir search;

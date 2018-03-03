@@ -25,13 +25,3 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type persist_sys_fp_vendor_prop, property_type;
-type persist_sys_fp_goodix_prop, property_type;
-type persist_sys_fp_fail_count_prop, property_type;
-type persist_sys_fp_onstart_prop, property_type;
-type media_msm8956_version_prop, property_type;
-type dolby_prop, property_type;
-type dm_adb_prop, property_type;
-type ctl_fm_dl_prop, property_type;
-type ctl_energy_awareness_prop, property_type;
-type net_lte_volte_call_capable_prop, property_type;

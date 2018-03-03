@@ -25,13 +25,3 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-persist.sys.fp.vendor          u:object_r:persist_sys_fp_vendor_prop:s0
-persist.sys.fp.goodix          u:object_r:persist_sys_fp_goodix_prop:s0
-persist.sys.fp.fail_count          u:object_r:persist_sys_fp_fail_count_prop:s0
-persist.sys.fp.onstart          u:object_r:persist_sys_fp_onstart_prop:s0
-media.msm8956.version          u:object_r:media_msm8956_version_prop:s0
-dolby.                     u:object_r:dolby_prop:s0
-persist.adb.secure        u:object_r:dm_adb_prop:s0
-ctl.fm_dl                  u:object_r:ctl_fm_dl_prop:s0
-ctl.energy-awareness          u:object_r:ctl_energy_awareness_prop:s0
-net.lte.volte_call_capable          u:object_r:net_lte_volte_call_capable_prop:s0

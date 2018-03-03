@@ -25,11 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-goodix.fp          u:object_r:gx_fpd_service:s0
-fm_fingerprint_service                    u:object_r:fm_fingerprint_service:s0
-nubia_fingerprints_service               u:object_r:nubia_fingerprints_service:s0
-regionalization                                       u:object_r:regionalization_service:s0
-com.vzw.nfc.AidFilter                          u:object_r:nfc_service:s0
-com.broadcom.nfc.Factory                       u:object_r:nfc_service:s0
-enrichrcsservice                               u:object_r:radio_service:s0
-
+allow netmgrd self:capability dac_override;

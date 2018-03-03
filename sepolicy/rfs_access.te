@@ -24,7 +24,5 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-binder_call(system_server, gx_fpd);
-allow system_server sensors_persist_file:dir { search };
-allow system_server sensors_persist_file:file { open read write };
-allow system_server sysfs_prox_cal:file { open write };
+
+allow rfs_access self:capability net_raw;
