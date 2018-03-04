@@ -25,4 +25,12 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-/system/bin/dmapp                               u:object_r:dmapp_exec:s0
+type dmapp, domain;
+type dmapp_exec, exec_type, file_type;
+
+init_daemon_domain(dmapp)
+
+allow dmapp self:capability { dac_override chown };
+allow dmapp persist_file:dir search;
+allow dmapp persist_file:file { open read write setattr };
+allow dmapp diag_device:chr_file { open read write ioctl };

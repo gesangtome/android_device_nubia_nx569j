@@ -322,20 +322,25 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.bt.service.rc \
-    init.nubia.extend.usb.rc \
+    init.bt.config.service.rc \
+    init.class_main.sh \
     init.nubia.extension.rc \
-    init.nubia.sh \
     init.nubia.usb.rc \
     init.project.rc \
+    init.qcom.bms.sh \
     init.qcom.bt.sh \
+    init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
-    init.qcom.usb.sh \
+    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
+
+PRODUCT_PACKAGES += \
+    qcrypto_module.ko \
+    qdrbg_module.ko
 
 # RCS
 PRODUCT_PACKAGES += \
