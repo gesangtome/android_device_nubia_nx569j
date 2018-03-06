@@ -27,6 +27,9 @@
 
 $(call inherit-product-if-exists, vendor/nubia/nx569j/nx569j-vendor.mk)
 
+# Include custom audio files
+include device/nubia/nx569j/sounds/sm_audio.mk
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
@@ -347,44 +350,6 @@ PRODUCT_PACKAGES += \
     rcscommon \
     rcs_service_aidl \
     rcs_service_api
-
-# Ringtone
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sounds/alarms/Beautiful.ogg:system/media/alarms/Beautiful.ogg \
-    $(LOCAL_PATH)/sounds/alarms/Kalimbell.ogg:system/media/alarms/Kalimbell.ogg \
-    $(LOCAL_PATH)/sounds/alarms/OpenForest.ogg:system/media/alarms/OpenForest.ogg \
-    $(LOCAL_PATH)/sounds/alarms/Twlight.ogg:system/media/alarms/Twlight.ogg
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sounds/notifications/Default.ogg:system/media/notifications/Default.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Europa.ogg:system/media/notifications/Europa.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Hello.ogg:system/media/notifications/Hello.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Jingle.ogg:system/media/notifications/Jingle.ogg \
-    $(LOCAL_PATH)/sounds/notifications/MagicBell.ogg:system/media/notifications/MagicBell.ogg \
-    $(LOCAL_PATH)/sounds/notifications/MusicBox.ogg:system/media/notifications/MusicBox.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Piano.ogg:system/media/notifications/Piano.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Promote.ogg:system/media/notifications/Promote.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Rhea.ogg:system/media/notifications/Rhea.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Tethys.ogg:system/media/notifications/Tethys.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Tinnitus.ogg:system/media/notifications/Tinnitus.ogg \
-    $(LOCAL_PATH)/sounds/notifications/Unobtrusive.ogg:system/media/notifications/Unobtrusive.ogg \
-    $(LOCAL_PATH)/sounds/notifications/WindChime.ogg:system/media/notifications/WindChime.ogg
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sounds/ringtones/Castle.ogg:system/media/ringtones/Castle.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Chanson.ogg:system/media/ringtones/Chanson.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Classical.ogg:system/media/ringtones/Classical.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Dance.ogg:system/media/ringtones/Dance.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Funtouch.ogg:system/media/ringtones/Funtouch.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Greenery.ogg:system/media/ringtones/Greenery.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Harp.ogg:system/media/ringtones/Harp.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/HuaweiTune.ogg:system/media/ringtones/HuaweiTune.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Mile.ogg:system/media/ringtones/Mile.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Rain.ogg:system/media/ringtones/Rain.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Rainbow.ogg:system/media/ringtones/Rainbow.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Rhythm.ogg:system/media/ringtones/Rhythm.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Sunshine.ogg:system/media/ringtones/Sunshine.ogg \
-    $(LOCAL_PATH)/sounds/ringtones/Wooden.ogg:system/media/ringtones/Wooden.ogg
 
 # SSL Compat
 PRODUCT_PACKAGES += \
