@@ -244,9 +244,6 @@ TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 # TimeService
 BOARD_USES_QC_TIME_SERVICES := true
 
-# VIPER4AndroidFX
-WITH_V4A := true
-
 # Wifi
 BOARD_HAS_QCOM_WLAN         := true
 BOARD_HAS_QCOM_WLAN_SDK     := true

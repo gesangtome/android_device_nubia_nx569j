@@ -220,8 +220,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/input_proxy.idc:system/usr/idc/input_proxy.idc
 
 # Keymaster
-PRODUCT_PACKAGES += \
-    keystore.msm8952
+#PRODUCT_PACKAGES += \
+#    keystore.msm8952
 
 # Lights
 PRODUCT_PACKAGES += \

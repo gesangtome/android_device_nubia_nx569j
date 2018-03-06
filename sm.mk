@@ -29,6 +29,9 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# VIPER4AndroidFX
+WITH_V4A := true
+
 # =================================================================================================
 # The default language option.
 # If you want to add more languages, please add to this and submit it to me using git pull request.
