@@ -27,9 +27,6 @@
 
 $(call inherit-product-if-exists, vendor/nubia/nx569j/nx569j-vendor.mk)
 
-# Include custom audio files
-include device/nubia/nx569j/sounds/sm_audio.mk
-
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
