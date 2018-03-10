@@ -55,7 +55,7 @@ TARGET_LOCALES += ru_RU
 TARGET_LOCALES += es_ES
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/sm/config/common_full_phone.mk)
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/nubia/nx569j/device.mk)
@@ -67,7 +67,7 @@ PRODUCT_RELEASE_NAME := nubia Z17mini
 BOARD_VENDOR := nubia
 PRODUCT_BRAND := nubia
 PRODUCT_DEVICE := nx569j
-PRODUCT_NAME := sm_nx569j
+PRODUCT_NAME := slim_nx569j
 PRODUCT_MANUFACTURER := nubia
 PRODUCT_MODEL := nx569j
 TARGET_VENDOR := nubia
