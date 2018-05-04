@@ -110,9 +110,7 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 # CMHW
 BOARD_USES_CYANOGEN_HARDWARE := true
 
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(DEVICE_PATH)/cmhw
+BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # CNE
 BOARD_USES_QCNE := true
