@@ -119,22 +119,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/cne/andsfCne.xml:system/etc/cne/andsfCne.xml \
     $(LOCAL_PATH)/cne/SwimConfig.xml:system/etc/cne/SwimConfig.xml
 
-# ConfigPanel
-PRODUCT_PACKAGES += \
-    ConfigPanel
-
 # unknown
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/unknown/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(LOCAL_PATH)/unknown/capability.xml:system/etc/capability.xml \
-
-# Doze
-PRODUCT_PACKAGES += \
-    Doze
-
-# Device was launched with M
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
+    $(LOCAL_PATH)/unknown/capability.xml:system/etc/capability.xml
 
 # DataServices
 PRODUCT_PACKAGES += \
