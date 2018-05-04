@@ -330,12 +330,6 @@ PRODUCT_PACKAGES += \
     qcrypto_module.ko \
     qdrbg_module.ko
 
-# RCS
-PRODUCT_PACKAGES += \
-    rcscommon \
-    rcs_service_aidl \
-    rcs_service_api
-
 # SSL Compat
 PRODUCT_PACKAGES += \
     libboringssl-compat
