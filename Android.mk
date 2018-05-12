@@ -265,7 +265,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 # Create a link for the WCNSS config file, which ends up as a writable
 # version in /data/misc/wifi
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wlan/prima; \
-	ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
+	ln -sf /persist/WCNSS_qcom_cfg.ini \
 		$(TARGET_OUT)/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini; \
         ln -sf /persist/WCNSS_wlan_dictionary.dat \
                 $(TARGET_OUT)/etc/firmware/wlan/prima/WCNSS_wlan_dictionary.dat; \
