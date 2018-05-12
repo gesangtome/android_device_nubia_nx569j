@@ -26,5 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 for list in eng user userdebug; do
-add_lunch_combo sm_nx569j-$list
+add_lunch_combo aoscp_nx569j-$list
 done
