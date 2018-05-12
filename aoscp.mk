@@ -18,50 +18,23 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-$(call inherit-product, device/nubia/nx569j/sounds/audio.mk)
-
-# VIPER4AndroidFX
-WITH_V4A := true
-
-# =================================================================================================
-# The default language option.
-# If you want to add more languages, please add to this and submit it to me using git pull request.
-# in which format is as follows:
-# 
-# TARGET_LOCALES + : $language_$area
-# =================================================================================================
-
-# Chinese - The People's Republic of China
-TARGET_LOCALES := zh_CN zh_HK zh_TW
-
-# English - The United States of America
-TARGET_LOCALES += en_US
-
-# Russia - The Russian federation
-TARGET_LOCALES += ru_RU
-
-# Spanish - The kingdom of Spain
-TARGET_LOCALES += es_ES
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/sm/config/common_full_phone.mk)
-
-# Inherit device configuration
+# Inherit from mido device
 $(call inherit-product, device/nubia/nx569j/device.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := nubia Z17mini
 
-# Set those variables here to overwrite the inherited values.
+# Device identifier. This must come after all inclusions
 BOARD_VENDOR := nubia
-PRODUCT_BRAND := nubia
-PRODUCT_DEVICE := nx569j
 PRODUCT_NAME := aoscp_nx569j
+PRODUCT_DEVICE := nx569j
+PRODUCT_BRAND := nubia
+PRODUCT_MODEL := nubia Z17mini
 PRODUCT_MANUFACTURER := nubia
-PRODUCT_MODEL := nx569j
 TARGET_VENDOR := nubia
 
 PRODUCT_GMS_CLIENTID_BASE := android-nubia
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.timezone=Asia/Shanghai
+# Inherit some common CypherOS stuff.
+$(call inherit-product, vendor/aoscp/configs/common_full_phone.mk)
+
