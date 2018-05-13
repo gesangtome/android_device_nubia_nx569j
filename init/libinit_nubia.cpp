@@ -25,15 +25,16 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <sys/sysinfo.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
-
+#include <stdlib.h>
+#include <sys/sysinfo.h>
+#include <unistd.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
-#include "util.h"
+//#include "util.h"
+
+using android::init::property_set;
 
 char const *description;
 char const *fingerprint;
@@ -85,7 +86,7 @@ static int read_file2(const char *fname, char *data, int max_size)
 
     fd = open(fname, O_RDONLY);
     if (fd < 0) {
-        ERROR("failed to open '%s'\n", fname);
+        printf("failed to open '%s'\n", fname);
         return 0;
     }
 
