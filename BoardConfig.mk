@@ -222,7 +222,8 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_POWERHAL_VARIANT := qcom
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system/system.prop
+TARGET_SYSTEM_PROP += \
+    $(DEVICE_PATH)/system/system.prop
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
@@ -247,6 +248,10 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy
+
+# SECCOMP
+BOARD_SECCOMP_POLICY := \
+    $(DEVICE_PATH)/seccomp
 
 # Tap2Wake
 TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
